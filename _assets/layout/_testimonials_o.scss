@@ -1,53 +1,203 @@
-/* Scoped styling for the testimonial section */
+/* testimonials.scss – Clean, Premium, 100% Consistent */
 #testimonials {
   position: relative;
-  padding: 2.5rem 0;
+  padding: 6rem 2rem; // Matches other sections
   width: 100%;
+  background-color: var(--color-section-bg); // #F8F9FA
+  text-align: center;
+  overflow: hidden;
+
+  // Subtle repeating background (kept, but refined)
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('/assets/Background.png');
+    background-repeat: repeat;
+    background-size: 250px auto;
+    opacity: 0.15;
+    z-index: -1;
+    // filter: blur(0.5px); // Optional: uncomment for softer look
+  }
+
+  // Section Heading (matches all others)
+  .section-heading {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--color-header); // #021736
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -0.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #FFD700, #D4AF37);
+      border-radius: 2px;
+    }
+  }
+
+  .section-subtitle {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 1.125rem;
+    color: var(--color-text-secondary); // #555555
+    font-weight: 400;
+    margin-bottom: 4rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  // Grid Container
+  .testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  // TESTIMONIAL CARD – FULLY CONSISTENT
+  .testimonial-card {
+    background: var(--color-card-calc); // #FFFFFF
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-border); // #E5E5E5
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 380px;
+
+    // Gold hover bar
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #FFD700, #D4AF37, #FFD700);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+
+    // Client Photo
+    .client-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #D4AF37; // Metallic Gold
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 16px rgba(212, 175, 55, 0.2);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 24px rgba(212, 175, 55, 0.3);
+      }
+    }
+
+    // Quote Text
+    .quote {
+      font-size: 1.1rem;
+      color: var(--color-text-secondary); // #555555
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+      position: relative;
+      padding: 0 0.5rem;
+
+      &::before,
+      &::after {
+        content: '"';
+        font-size: 3rem;
+        color: #FFD700;
+        opacity: 0.2;
+        position: absolute;
+        font-family: Georgia, serif;
+      }
+
+      &::before {
+        top: -10px;
+        left: -10px;
+      }
+
+      &::after {
+        bottom: -30px;
+        right: -10px;
+      }
+    }
+
+    // Client Name
+    .client-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-header); // #021736
+      margin: 0 0 0.35rem 0;
+      letter-spacing: -0.01em;
+    }
+
+    // Client Title/Company
+    .client-title {
+      font-size: 1rem;
+      color: #D4AF37; // Gold
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  }
 }
 
-#testimonials::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('/assets/Background.png');
-  background-repeat: repeat;
-  background-size: 250px auto;
-  //filter: blur(1px);
-  opacity: 0.2; /* Makes the image 30% darker */
-  z-index: -1;
+// Fade-in Animation (matches others)
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-#testimonials .team-member {
-  /* Keep your existing team-member styling */
-  position: relative; /* Ensures content stays above the blurred background */
-  /* rest of your styles... */
+.testimonial-card {
+  animation: fadeInUp 0.6s ease-out forwards;
+
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.1}s;
+    }
+  }
 }
 
-#testimonials .team-member img {
-  width: 225px;
-  height: 225px;
-  border: 7px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-}
-
-#testimonials .team-member h5 {
-  margin-top: 20px;
-  margin-bottom: 5px;
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-#testimonials .team-member p {
-  font-style: italic;
-  color: #212529;
-  margin-top: 0;
-}
-
-/* Keep highlight separate if used elsewhere */
+/* Legacy .highlight class – now gold-themed */
 .highlight {
-  background-color: #fff2ac;
-  background-image: linear-gradient(to right, #ffe359 0%, #fff2ac 100%);
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(212, 175, 55, 0.05));
+  padding: 0.15em 0.3em;
+  border-radius: 4px;
+  font-weight: 600;
 }

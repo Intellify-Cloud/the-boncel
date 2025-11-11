@@ -1,20 +1,20 @@
-// Services Section aligned with Calculator, Team, and Testimonials design
+// Services Section – Fully Aligned with Core Palette
 #services {
   position: relative;
-  padding: 6rem 2rem; // Matching other sections padding
+  padding: 6rem 2rem;
   width: 100%;
-  background-color: #ebf3fe; // Matching dark teal background
+  background-color: var(--color-section-bg); // #F8F9FA
   text-align: center;
   min-height: 80vh;
-  color: #ffffff; // White text for contrast
+  color: var(--color-text-primary); // #1A1A1A
 
-  // Section heading styling to match other sections
+  // Section heading
   h2,
   .section-heading {
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 700;
-    color: #ffffff;
+    color: var(--color-header); // #021736
     letter-spacing: -0.02em;
     margin-bottom: 1rem;
     position: relative;
@@ -27,16 +27,16 @@
       transform: translateX(-50%);
       width: 60px;
       height: 3px;
-      background: linear-gradient(90deg, #ffe44d, #fdd835);
+      background: linear-gradient(90deg, #FFD700, #D4AF37); // Gold trim
       border-radius: 2px;
     }
   }
 
-  // Section subtitle styling
+  // Section subtitle
   .section-subtitle {
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 1.125rem;
-    color: #e0e0e0;
+    color: var(--color-text-secondary); // #555555
     font-weight: 400;
     margin-bottom: 4rem;
     max-width: 600px;
@@ -45,11 +45,11 @@
     line-height: 1.6;
   }
 
-  // Services container with grid layout
+  // Grid container
   .services-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 3rem; // Matching testimonials spacing
+    gap: 3rem;
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem 1rem;
@@ -61,12 +61,12 @@
     }
   }
 
-  // Legacy flexbox support (if not using grid container)
+  // Legacy flex fallback
   &:not(.grid-layout) {
     display: flex;
     flex-wrap: wrap;
-    gap: 3rem; // Increased spacing
-    justify-content: center; // Changed to center for better alignment
+    gap: 3rem;
+    justify-content: center;
     align-items: stretch;
 
     @media (max-width: 1000px) {
@@ -75,25 +75,25 @@
     }
   }
 
+  // Service Cards
   .card,
   .service-card {
-    background: #1c3d44; // Matching card background
-    border: 1px solid rgba(255, 228, 77, 0.1); // Subtle yellow border
-    border-radius: 12px; // Matching border radius
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Matching shadow
-    transition: transform 0.3s ease, box-shadow 0.3s ease; // Matching transition
-    color: #ffffff; // White text for contrast
+    background: var(--color-card-calc); // #FFFFFF
+    border: 1px solid var(--color-border); // #E5E5E5
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: var(--color-text-primary); // #1A1A1A
     padding: 2rem;
     text-align: center;
     position: relative;
     overflow: hidden;
-    height: auto;
     min-height: 350px;
     display: flex;
     flex-direction: column;
-    margin: 1rem; // Added margin for extra spacing
+    margin: 1rem;
 
-    // Yellow top border on hover
+    // Gold top border on hover
     &::before {
       content: "";
       position: absolute;
@@ -101,73 +101,66 @@
       left: 0;
       right: 0;
       height: 4px;
-      background: linear-gradient(90deg, #ffe44d, #fdd835, #ffe44d);
+      background: linear-gradient(90deg, #FFD700, #D4AF37, #FFD700);
       transform: scaleX(0);
+      transform-origin: center;
       transition: transform 0.3s ease;
     }
 
     &:hover {
-      transform: translateY(-5px); // Matching hover effect
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); // Matching hover shadow
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 
       &::before {
         transform: scaleX(1);
       }
     }
 
-    // Service icon styling
+    // Icon
     .service-icon {
       font-size: 2.5rem;
       margin-bottom: 2rem;
-      color: #ffe44d; // Yellow icons
+      color: #D4AF37; // Muted gold
 
       i {
         padding: 1.5rem;
         border-radius: 50%;
-        background: linear-gradient(
-          135deg,
-          rgba(255, 228, 77, 0.1) 0%,
-          rgba(255, 228, 77, 0.15) 100%
-        );
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(212, 175, 55, 0.15));
         display: inline-block;
-        position: relative;
-        box-shadow: 0 8px 16px rgba(255, 228, 77, 0.15),
-          inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 16px rgba(255, 215, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
         transition: all 0.3s ease;
 
         &:hover {
           transform: scale(1.1);
-          box-shadow: 0 12px 24px rgba(255, 228, 77, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+          box-shadow: 0 12px 24px rgba(255, 215, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
         }
       }
     }
 
-    // Service heading styling
+    // Card Title
     .card-title,
     .service-heading {
       margin: 0 0 1.25rem 0;
-      font-size: 1.75rem; // Matching other sections
+      font-size: 1.75rem;
       font-weight: 700;
-      color: #ffffff;
+      color: var(--color-header); // #021736
       font-family: "Roboto", "Helvetica", "Arial", sans-serif;
       letter-spacing: -0.01em;
       line-height: 1.2;
-      text-align: center;
     }
 
-    // Service description styling
+    // Card Description
     .card-text,
     .service-description {
       font-size: 1.1rem;
-      color: #e0e0e0;
+      color: var(--color-text-secondary); // #555555
       line-height: 1.5;
       font-weight: 400;
       margin-bottom: 2rem;
       flex-grow: 1;
     }
 
-    // Card footer styling
+    // Card Footer
     .card-footer {
       border: none;
       background: transparent;
@@ -175,7 +168,7 @@
       margin-top: auto;
     }
 
-    // Responsive adjustments for individual cards
+    // Responsive
     @media (max-width: 1000px) {
       width: 100%;
       max-width: 500px;
@@ -199,25 +192,25 @@
     }
   }
 
-  // Button styling matching other sections
+  // Button – Gold Primary
   .btn,
   .service-button {
     display: inline-block !important;
     padding: 16px 32px !important;
     font-size: 1rem !important;
     font-weight: 700 !important;
-    border-radius: 50px !important; // Matching button radius
+    border-radius: 50px !important;
     text-decoration: none !important;
-    background: linear-gradient(135deg, #ffe44d 0%, #fdd835 100%) !important;
-    color: #ebf3fe !important; // Dark teal text
-    border: none !important;
+    background: linear-gradient(135deg, #FFD700, #D4AF37) !important;
+    color: var(--color-header) !important; // Navy text on gold
+    border: 2px solid transparent !important;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
     text-transform: uppercase !important;
     letter-spacing: 0.5px !important;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 8px 16px rgba(255, 228, 77, 0.3) !important;
-    margin-bottom: 0 !important; // Remove default margin
+    box-shadow: 0 8px 16px rgba(255, 215, 0, 0.3) !important;
+    margin-bottom: 0 !important;
 
     &::before {
       content: "";
@@ -226,20 +219,15 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(14, 31, 34, 0.1),
-        transparent
-      );
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
       transition: left 0.6s;
     }
 
     &:hover {
       transform: translateY(-3px) scale(1.05) !important;
-      background: linear-gradient(135deg, #fff176 0%, #ffe44d 100%) !important;
-      box-shadow: 0 12px 24px rgba(255, 228, 77, 0.4) !important;
-      color: #ebf3fe !important;
+      background: linear-gradient(135deg, #FFF176, #FFD700) !important;
+      box-shadow: 0 12px 24px rgba(255, 215, 0, 0.4) !important;
+      color: var(--color-header) !important;
 
       &::before {
         left: 100%;
@@ -257,7 +245,7 @@
   }
 }
 
-// Animation for page load (matching other sections)
+// Fade-in Animation
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -273,32 +261,19 @@
 #services .service-card {
   animation: fadeInUp 0.6s ease-out forwards;
 
-  &:nth-child(1) {
-    animation-delay: 0.1s;
-  }
-  &:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-  &:nth-child(3) {
-    animation-delay: 0.3s;
-  }
-  &:nth-child(4) {
-    animation-delay: 0.4s;
-  }
-  &:nth-child(5) {
-    animation-delay: 0.5s;
-  }
-  &:nth-child(6) {
-    animation-delay: 0.6s;
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.1}s;
+    }
   }
 }
 
-// Legacy service heading styling (if used outside cards)
+// Legacy standalone heading
 .service-heading {
   margin: 15px 0;
   font-size: 1.75rem;
   font-weight: 700;
   text-align: center;
-  color: #ffffff;
+  color: var(--color-header);
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }

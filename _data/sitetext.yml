@@ -1,6 +1,6 @@
 header:
   title: "Secure Your Home Loan with Confidence"
-  text: "Fast approvals, trusted advice, and the best deals for your bond."
+  text: "Fast bond approvals. Trusted advice. The best deals."
 
 expert:
   title: "Get pre-approved for a home loan today"
@@ -167,36 +167,30 @@ team:
   section: team
   contact:
   people:
-    - name: "Zelda Weaver"
+    - name: "Brad Burczak"
       role: "Property Finance Specialist"
-      image: assets/img/team/Zelda Weaver evo Homeloans.jpg
+      image: assets/img/team/Bradley Burczak.jpg
       social:
         - url: tel:082 414 1865
           icon: fas fa-phone
         - url: mailto:zelda.weaver@evogroup.co.za?subject=The Bond Cellar Website Enquiry
           icon: fas fa-envelope
-        - url: https://www.facebook.com/profile.php?id=61580109487431
-          icon: fab fa-facebook-f
+        #- url: https://www.facebook.com/profile.php?id=61580109487431
+        #  icon: fab fa-facebook-f
 
 testimonials:
   title: "Testimonials"
   text: ""
   section: testimonials
   people:
-    - name: "Hayden Ventress"
-      testimony: "Zelda Weaver is honestly the most helpful and kind person I have ever met! She goes above and beyond to guide clients through the entire process and makes everything feel so simple and stress-free. When it comes to getting bonds, she is truly the best — professional, efficient, and genuinely caring. I can’t recommend her enough!"
+    - name: "Quad Agis"
+      testimony: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-    - name: "Richard Fincham"
-      testimony: "As the agents on this sale, we thought securing a bond for this agricultural property would be impossible. Zelda proved us wrong! She went above and beyond, navigating every challenge with expertise and determination to get it done. Her dedication and professionalism made the deal happen – we can’t recommend her highly enough! ☆☆☆☆☆"
+    - name: "Romeo Finchinium"
+      testimony: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident! ☆☆☆☆☆"
 
-    - name: "Gary Whalley"
-      testimony: "Going the extra mile is stock standard stuff for Zelda . Her knowledge of how the banking sector works is of incredible value to all of our clients . Her hit rate is par excellence . Happy to recommend Zelda to anyone applying for finance to purchase a property"
-
-    - name: "Catherine Rennie"
-      testimony: "I have found Zelda very efficient and knowledgeable. She is prompt in responding and always follows up with my clients and keeps me updated."
-
-    - name: "Bev Bray"
-      testimony: "Zelda goes above and beyond to provide an exceptional service to our buyers. She works closely with them and keeps them informed every step of the way."
+    - name: "Gio Wadious"
+      testimony: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
 contact:
   title: "Contact Us"
@@ -206,11 +200,11 @@ contact:
 footer:
   legal: "Powered by evo Home Loans"
   social:
-    - url: https://www.instagram.com/bluekeyhomefinancepoweredbyevo/
+    - url: https://www.instagram.com/
       icon: "fab fa-instagram"
-    - url: https://www.facebook.com/profile.php?id=61580109487431
+    - url: https://www.facebook.com/
       icon: "fab fa-facebook-f"
-    - url: https://www.linkedin.com/company/blue-key-home-finance-%E2%80%93-powered-by-evo/
+    - url: https://www.linkedin.com/
       icon: "fab fa-linkedin-in"
       #- url: https://api.whatsapp.com/send?phone=27795620507
       #  icon: "fab fa-whatsapp"

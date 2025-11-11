@@ -4,7 +4,7 @@ header.hero {
   align-items: center; // vertical center
   justify-content: center; // horizontal center
   text-align: center;
-  color: #ffffff;
+  color: #fff; // Text Unde the Big Title
   background: linear-gradient(
       135deg,
       rgba(14, 31, 34, 0.733) 0%,
@@ -74,7 +74,7 @@ header.hero {
     border-radius: 50px;
     text-decoration: none;
     background: linear-gradient(135deg, #ffe44d 0%, #fdd835 100%);
-    color: #ebf3fe;
+    color: #021736; // Hero Button Text Colour
     border: none;
     box-shadow: 0 8px 18px rgba(255, 228, 77, 0.25);
   }

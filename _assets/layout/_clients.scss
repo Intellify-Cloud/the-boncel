@@ -1,23 +1,28 @@
 #clients {
   position: relative;
   z-index: 1;
-  background-color: #ebf3fe; // Dark teal background
+  background-color: var(--color-section-bg); // #F8F9FA – Soft Cloud
   padding: 4rem 1rem;
   text-align: center;
-
-  // Section text on dark teal background
-  color: #ffffff; // default font color
+  color: var(--color-text-primary); // #1A1A1A – Near Black
 
   .section-heading {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 2rem;
     font-weight: 700;
-    color: #ffffff; // headings in white for clarity
+    color: var(--color-header); // #021736 – Midnight Navy
     margin-bottom: 2rem;
+    letter-spacing: -0.01em;
+
+    &:last-of-type {
+      margin-bottom: 50px; // As requested
+    }
   }
 
   p {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 1.125rem;
-    color: #f1f1f1; // slightly softer white for body text
+    color: var(--color-text-secondary); // #555555 – Mid Gray
     max-width: 700px;
     margin: 0 auto 3rem;
     line-height: 1.6;
@@ -26,33 +31,30 @@
   .client-logo-card {
     width: 100px;
     height: 100px;
-    background-color: #ffffff; // white card for logos
+    background-color: #FFFFFF; // Pure white
     border-radius: 12px;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.06);
     margin: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--color-border); // #E5E5E5 – Subtle edge
 
     &:hover {
       transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     img {
       max-height: 50px;
       max-width: 80px;
-      filter: grayscale(40%); // muted logos by default
+      filter: grayscale(100%); // Start muted
       transition: filter 0.3s ease;
 
       &:hover {
-        filter: grayscale(0%); // full color on hover
+        filter: grayscale(0%); // Full color on hover
       }
     }
-  }
-
-  // add 50px below the *last heading* in this section
-  .section-heading:last-of-type {
-    margin-bottom: 50px;
   }
 }
