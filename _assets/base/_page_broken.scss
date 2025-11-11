@@ -1,0 +1,223 @@
+// page.scss  Material Design System (MUI-inspired)
+
+// Imports
+@import "./mixins"; // Adjust path as needed
+// If you have variables in a separate file, import them too:
+// @import 'base/variables';
+
+// SCSS bridge (for functions)
+$primary: var(--mui-primary);
+$secondary: var(--mui-secondary);
+$surface: var(--surface-color);
+$text-primary: var(--text-primary);
+$text-secondary: var(--text-secondary);
+
+// CSS Custom Properties (tokens)
+:root {
+  // Spacing & Radius
+  --spacing-unit: 8px;
+  --border-radius: 4px;
+  --border-radius-lg: 12px;
+  --border-radius-pill: 24px;
+
+  // Material Palette (Light)
+  --mui-primary: #1976d2;
+  --mui-secondary: #9c27b0;
+  --mui-success: #2e7d32;
+  --mui-warning: #ed6c02;
+  --mui-error: #d32f2f;
+
+  // Backgrounds
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+
+  // Surfaces
+  --surface-color: var(--bg-primary);
+  --surface-variant: var(--bg-secondary);
+
+  // Text
+  --text-primary: rgba(0, 0, 0, 0.87);
+  --text-secondary: rgba(0, 0, 0, 0.6);
+  --text-tertiary: rgba(0, 0, 0, 0.38);
+
+  // Shadows (Material Elevation)
+  --elevation-1: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  --elevation-2: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+
+  // Transitions
+  --transition-standard: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  // Section Backgrounds
+  --section-bg-default: var(--bg-primary);
+  --section-bg-alternate: var(--bg-secondary);
+  --section-bg-accent: var(--bg-tertiary);
+
+  // Calculator
+  --calculators-bg: var(--bg-secondary);
+  --calculators-card-bg: var(--bg-primary);
+  --calculators-card-hover-bg: var(--bg-primary);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --bg-tertiary: #2c2c2c;
+
+    --surface-color: var(--bg-secondary);
+    --surface-variant: var(--bg-tertiary);
+
+    --text-primary: rgba(255, 255, 255, 0.87);
+    --text-secondary: rgba(255, 255, 255, 0.6);
+    --text-tertiary: rgba(255, 255, 255, 0.38);
+
+    --calculators-bg: var(--bg-secondary);
+    --calculators-card-bg: var(--bg-tertiary);
+    --calculators-card-hover-bg: var(--bg-accent);
+  }
+}
+
+// Global Base Styles
+body {
+  overflow-x: hidden;
+  @include body-font;
+  line-height: 1.6;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include heading-font;
+  font-weight: 600;
+  margin-bottom: calc(var(--spacing-unit) * 2);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+}
+h4 {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+h5 {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+}
+h6 {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+// Links
+a {
+  color: var(--mui-primary);
+  text-decoration: none;
+  transition: all var(--transition-standard);
+
+  &:hover {
+    color: color-mix(in srgb, var(--mui-primary) 85%, black);
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--mui-primary);
+    outline-offset: 2px;
+    border-radius: var(--border-radius);
+  }
+}
+
+.text-primary {
+  color: var(--mui-primary) !important;
+}
+
+// Selection
+::selection {
+  background: color-mix(in srgb, var(--mui-primary) 20%, transparent);
+  text-shadow: none;
+}
+::-moz-selection {
+  background: color-mix(in srgb, var(--mui-primary) 20%, transparent);
+  text-shadow: none;
+}
+
+// Sections
+section,
+.page-section {
+  padding: clamp(3rem, 8vw, 5rem) 0;
+  background: var(--section-bg-default);
+}
+
+.section-heading {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: calc(var(--spacing-unit) * 4);
+}
+
+// Calculator Frames
+.calculator-frame {
+  width: 100%;
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--elevation-1);
+
+  &.bond-calc {
+    height: 1050px;
+  }
+  &.afford-calc,
+  &.deposit-calc {
+    height: 1500px;
+  }
+  &.transfer-calc {
+    height: 1850px;
+  }
+  &.amortisation-calc,
+  &.additional-payment-calc {
+    height: 1000px;
+  }
+
+  @media (max-width: 768px) {
+    &.bond-calc {
+      height: 900px;
+    }
+    &.afford-calc,
+    &.deposit-calc {
+      height: 1200px;
+    }
+    &.transfer-calc {
+      height: 1500px;
+    }
+    &.amortisation-calc,
+    &.additional-payment-calc {
+      height: 800px;
+    }
+  }
+}
+
+// Utility Classes
+.elevation-1 {
+  box-shadow: var(--elevation-1);
+}
+.rounded {
+  border-radius: var(--border-radius);
+}
+.transition {
+  transition: all var(--transition-standard);
+}

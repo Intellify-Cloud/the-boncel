@@ -1,0 +1,48 @@
+<!-- team.html -->
+<section class="team-section" id="{{ site.data.sitetext.team.section | default: 'team' }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="section-heading">{{ site.data.sitetext.team.title }}</h2>
+        <p class="section-subtitle">{{ site.data.sitetext.team.text }}</p>
+        
+        <div class="team-container">
+          {% for person in site.data.sitetext.team.people %}
+          <div class="team-member">
+            <div class="member-image">
+              <img src="{{ person.image }}" alt="{{ person.name }}">
+            </div>
+            
+            <div class="member-info">
+              <h4>{{ person.name }}</h4>
+              <p class="member-role">{{ person.role }}</p>
+              {% if person.description %}
+              <p class="member-description">{{ person.description }}</p>
+              {% endif %}
+            </div>
+            
+            {% if person.social %}
+            <div class="social-buttons">
+              {% for network in person.social %}
+              <a href="{{ network.url }}" target="_blank" rel="noopener noreferrer" 
+                 class="{% if network.icon contains 'linkedin' %}linkedin{% elsif network.icon contains 'twitter' %}twitter{% elsif network.icon contains 'github' %}github{% elsif network.icon contains 'envelope' %}email{% endif %}"
+                 aria-label="{{ person.name }} {{ network.title | default: 'social profile' }}">
+                <i class="{{ network.icon }}" aria-hidden="true"></i>
+              </a>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        
+        {% if site.data.sitetext.team.subtext %}
+        <div class="text-center mt-5">
+          <div class="team-subtext">{{ site.data.sitetext.team.subtext | markdownify }}</div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Team -->

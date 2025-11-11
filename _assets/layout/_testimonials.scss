@@ -1,0 +1,297 @@
+/* Testimonials Section aligned with Calculator and Team design */
+#testimonials {
+  position: relative;
+  padding: 6rem 2rem; // Matching team section padding
+  width: 100%;
+  background-color: #ebf3fe; // Matching dark teal background
+  text-align: center;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  // White text for perfect contrast on dark background
+  color: #ffffff;
+
+  // Section heading styling to match team section
+  h2,
+  .section-heading {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -0.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #ffe44d, #fdd835);
+      border-radius: 2px;
+    }
+  }
+
+  // Section subtitle styling
+  .section-subtitle {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 1.125rem;
+    color: #e0e0e0;
+    font-weight: 400;
+    margin-bottom: 4rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  h3,
+  h4,
+  h5 {
+    color: #ffffff;
+  }
+
+  p {
+    color: #e0e0e0; // Light gray for excellent readability
+  }
+
+  // Container for testimonials grid
+  .testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+}
+
+/* Remove the background image overlay */
+#testimonials::before {
+  display: none;
+}
+
+#testimonials .team-member,
+.testimonial-card {
+  position: relative;
+  padding: 2rem;
+  margin: 1rem; // Added margin around each card for extra spacing
+  background: #1c3d44; // Matching calculator and team card background
+  border-radius: 12px; // Matching border radius
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Matching shadow
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; // Matching transition
+  border: 1px solid rgba(255, 228, 77, 0.1); // Subtle yellow border
+  overflow: hidden;
+  height: auto; // Changed to auto to prevent stretching issues
+  min-height: 400px; // Set minimum height instead
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // White text for contrast on dark card background
+  color: #ffffff;
+
+  // Yellow top border on hover (matching team cards)
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ffe44d, #fdd835, #ffe44d);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-5px); // Matching hover effect
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); // Matching hover shadow
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+
+  // Testimonial image styling
+  img {
+    width: 150px; // Matching team member image size
+    height: 150px;
+    border: 4px solid #ffe44d; // Yellow border matching theme
+    border-radius: 50%;
+    margin-bottom: 2rem; // Matching spacing
+    object-fit: cover;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 16px rgba(255, 228, 77, 0.2);
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 24px rgba(255, 228, 77, 0.3);
+    }
+  }
+
+  // Name styling (matching team member titles)
+  h5,
+  .testimonial-name {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.75rem; // Matching team member title size
+    font-weight: 700; // Matching weight
+    color: #ffffff; // White for perfect contrast
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  // Role/title styling (matching team member roles)
+  .testimonial-role {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 1rem;
+    color: #ffe44d; // Yellow accent
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  // Testimonial text styling (matching team member descriptions)
+  p,
+  .testimonial-text {
+    font-style: italic;
+    color: #e0e0e0; // Light gray for excellent readability
+    margin: 0;
+    font-size: 1.1rem; // Matching description size
+    line-height: 1.5;
+    font-weight: 400;
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+
+    &::before {
+      content: '"';
+      font-size: 2rem;
+      color: #ffe44d;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    &::after {
+      content: '"';
+      font-size: 2rem;
+      color: #ffe44d;
+      font-weight: bold;
+      margin-left: 0.5rem;
+    }
+  }
+
+  // Star rating styling
+  .rating {
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-top: auto;
+    margin-bottom: 1rem;
+
+    .star {
+      color: #ffe44d;
+      font-size: 1.25rem;
+    }
+  }
+}
+
+/* Highlight utility aligned with theme */
+.highlight {
+  background: linear-gradient(
+    135deg,
+    #ffe44d 0%,
+    #fdd835 100%
+  ); // Matching button gradient
+  color: #ebf3fe; // Dark teal text for perfect contrast
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  #testimonials {
+    padding: 4rem 1rem;
+
+    h2,
+    .section-heading {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .team-member,
+    .testimonial-card {
+      padding: 1.5rem;
+
+      img {
+        width: 120px;
+        height: 120px;
+      }
+
+      h5,
+      .testimonial-name {
+        font-size: 1.5rem;
+      }
+
+      p,
+      .testimonial-text {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// Animation for page load (matching team section)
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.team-member,
+.testimonial-card {
+  animation: fadeInUp 0.6s ease-out forwards;
+
+  &:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  &:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  &:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+  &:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+}

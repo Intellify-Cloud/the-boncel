@@ -1,0 +1,48 @@
+#clients {
+  position: relative;
+  z-index: 1;
+  background-color: #ebf3fe;
+  padding: 4rem 1rem;
+  text-align: center;
+  color: #ffffff;
+}
+#clients .section-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+#clients p {
+  font-size: 1.125rem;
+  color: #f1f1f1;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+#clients .client-logo-card {
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.06);
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+#clients .client-logo-card:hover {
+  transform: translateY(-4px);
+}
+#clients .client-logo-card img {
+  max-height: 50px;
+  max-width: 80px;
+  filter: grayscale(40%);
+  transition: filter 0.3s ease;
+}
+#clients .client-logo-card img:hover {
+  filter: grayscale(0%);
+}
+#clients .section-heading:last-of-type {
+  margin-bottom: 50px;
+}

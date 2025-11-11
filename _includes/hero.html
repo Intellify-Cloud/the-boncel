@@ -1,0 +1,20 @@
+<!-- Header -->
+<header class="hero" id="{{ site.data.sitetext.about.section | default: 'hero' }}" aria-label="Hero Section">
+    <div class="container">
+      {%- if site.data.sitetext.header.title -%}
+      <h1 class="intro-heading">{{ site.data.sitetext.header.title | markdownify }}</h1>
+      {%- endif -%}
+  
+      {%- if site.data.sitetext.header.text -%}
+      <p class="intro-lead-in">{{ site.data.sitetext.header.text | markdownify }}</p>
+      {%- endif -%}
+  
+      <a class="btn btn-xl js-scroll-trigger" href="#services">Get Started Today</a>
+      
+      <!-- Optional scroll indicator -->
+      <div class="scroll-indicator">
+        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+      </div>
+    </div>
+</header>
+<!-- End Header -->

@@ -1,0 +1,33 @@
+baseurl: ""
+
+title: The Bond Cellar - Expert in Bond Origination & Home Loans in the KZN Midlands
+email: mailto:bluekeyfinance@evogroup.co.za
+description: "Looking for expert help with your home loan? Contact The Bond Cellar — your trusted partner in property finance. We are experienced home loan specialists dedicated to guiding you through every step of the bond and mortgage origination process. With deep knowledge of the property industry, we focus on securing the best home loans, property finance solutions, and bond approvals. At The Bond Cellar, we are passionate about helping clients achieve their property goals while delivering excellence and building lasting relationships."
+author: Eben Roux / Pieter Oosthuizen
+
+analytics:
+  google: G-XXX
+
+collections:
+  portfolio:
+
+markdown: kramdown
+
+webserver_headers:
+  - - Access-Control-Allow-Origin
+    - "*"
+  - - Access-Control-Allow-Methods
+    - GET, OPTIONS, HEAD
+
+logo:
+  path: /assets/img/logo/the-bond-cellar-logo.jpg
+
+exclude: [node_modules, webpack-config.js, package.json, package-lock.json]
+
+group: The Bond Cellar
+
+company: The Bond Cellar
+
+url: https://evohomeloans.co.za
+
+address:

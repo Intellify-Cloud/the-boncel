@@ -1,0 +1,85 @@
+// Hero Section aligned with dark teal design theme
+header.hero {
+  display: flex;
+  align-items: center; // vertical center
+  justify-content: center; // horizontal center
+  text-align: center;
+  color: #ffffff;
+  background: linear-gradient(
+      135deg,
+      rgba(14, 31, 34, 0.733) 0%,
+      rgba(28, 61, 68, 0.664) 10%,
+      rgba(14, 31, 34, 0.61) 100%
+    ),
+    url("#{$header-image}");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  margin-top: 80px; // ✅ hero begins just below navbar
+  height: calc(100vh - 80px); // ✅ full screen minus navbar
+  width: 100%;
+  margin-left: 0; // ✅ Only reset horizontal margins
+  margin-right: 0; // ✅ Keep the margin-top intact
+
+  // remove animated overlay
+  &::before {
+    display: none;
+  }
+
+  .container {
+    z-index: 2;
+    padding: 2rem;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .intro-heading {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 0 rgba(14, 31, 34, 0.8),
+      4px 4px 20px rgba(0, 0, 0, 0.5);
+
+    &::after {
+      content: "";
+      display: block;
+      margin: 1rem auto 0 auto;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #ffe44d, #fdd835);
+      border-radius: 2px;
+    }
+  }
+
+  .intro-lead-in {
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+    margin-bottom: 2rem;
+    color: #e0e0e0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-xl {
+    display: inline-block;
+    padding: 16px 32px;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    background: linear-gradient(135deg, #ffe44d 0%, #fdd835 100%);
+    color: #ebf3fe;
+    border: none;
+    box-shadow: 0 8px 18px rgba(255, 228, 77, 0.25);
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+}

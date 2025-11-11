@@ -1,0 +1,64 @@
+
+<!-- Footer -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Copyright -->
+      <div class="footer-section">
+        <p class="copyright">Copyright &copy; {{ site.company }} {{ 'now' | date: "%Y" }}</p>
+      </div>
+      
+      <!-- Social Media -->
+      <div class="footer-section footer-section--center">
+        <ul class="social-buttons">
+          {% for link in site.data.sitetext.footer.social %}
+          <li class="social-item">
+            {% if link.url %}
+            <a href="{{ link.url }}" class="social-link" target="_blank" rel="noopener noreferrer">
+              {% if link.icon %}<i class="{{ link.icon }}"></i>{% endif %}
+            </a>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="footer-section footer-section--end">
+        <ul class="quicklinks">
+                      {% if site.data.sitetext.footer.legal %}
+              <li class="list-inline-item">
+                <a href="https://evohomeloans.co.za" target="_blank" style="color: black;">
+                  {{ site.data.sitetext.footer.legal }}
+                </a>
+              </li>
+              {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% if page.layout == "page" %}
+<script>
+  const fixPageShort = () => {
+    const footer = document.getElementById("footer");
+    if (window.innerHeight > document.body.offsetHeight) {
+      footer.classList.add("footer--fixed");
+    } else {
+      footer.classList.remove("footer--fixed");
+    }
+  };
+
+  fixPageShort();
+  window.addEventListener('resize', fixPageShort);
+</script>
+{% endif %}
+
+<!-- WhatsApp Float Button -->
+<div class="whatsapp-float">
+  <a href="https://api.whatsapp.com/send?phone=27825190947" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-text">Chat</span>
+  </a>
+</div>

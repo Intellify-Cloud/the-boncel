@@ -1,0 +1,31 @@
+<!-- Calculators -->
+<section class="calculators" id="{{ site.data.sitetext.calculators.section | default: 'calculators' }}">
+  <div class="container">
+    <h1 class="main-title">{{ site.data.sitetext.calculators.title | default: "HOME LOAN CALCULATORS" }}</h1>
+    {% if site.data.sitetext.calculators.text %}
+      <p class="subtitle">{{ site.data.sitetext.calculators.text }}</p>
+    {% endif %}
+
+    <div class="calculators-grid">
+      {% for service in site.data.sitetext.calculators.list %}
+        <div class="calculators-card">
+          <div class="calculators-icon">
+            <i class="{{ service.icon | default: 'fas fa-calculator' }}"></i>
+          </div>
+          <h4 class="calculators-title">{{ service.title | markdownify }}</h4>
+          {% if service.desc %}
+            <p class="calculators-desc">{{ service.desc | markdownify }}</p>
+          {% endif %}
+          {% if service.link %}
+            <div class="calculators-footer">
+              <a href="{{ service.link.url }}" class="btn btn-xl shadow">
+                {{ service.link.text }}
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- End Calculators -->

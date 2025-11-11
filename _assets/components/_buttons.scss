@@ -1,0 +1,291 @@
+/*!
+ * Modern Button Components - MUI Inspired
+ */
+
+// Design tokens
+$button-border-radius: 8px;
+$button-border-radius-lg: 12px;
+$button-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+$button-elevation: 0 2px 4px rgba(0, 0, 0, 0.1);
+$button-elevation-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
+$button-elevation-active: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+// Base button component
+.btn {
+  @include heading-font;
+  
+  // Typography
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-transform: none; // More modern approach
+  
+  // Layout & spacing
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  min-height: 2.5rem;
+  min-width: 4rem;
+  border-radius: $button-border-radius;
+  
+  // Interaction
+  border: 1px solid transparent;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  
+  // Transitions
+  transition: $button-transition;
+  
+  // Focus management
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+  
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+  
+  // Disabled state
+  &:disabled,
+  &[aria-disabled="true"] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  
+  // Ripple effect container
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: currentColor;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+  
+  &:hover::before {
+    opacity: 0.08;
+  }
+  
+  &:active::before {
+    opacity: 0.12;
+  }
+}
+
+// Size variants
+.btn--small {
+  font-size: 0.8125rem;
+  padding: 0.5rem 0.75rem;
+  min-height: 2rem;
+}
+
+.btn--large {
+  font-size: 0.9375rem;
+  padding: 0.75rem 1.5rem;
+  min-height: 3rem;
+  border-radius: $button-border-radius-lg;
+}
+
+.btn--xl {
+  font-size: 1.0625rem;
+  padding: 1rem 2rem;
+  min-height: 3.5rem;
+  border-radius: $button-border-radius-lg;
+  font-weight: 600;
+}
+
+// Primary variant (contained)
+.btn--primary {
+  background-color: $primary;
+  color: white;
+  box-shadow: $button-elevation;
+  
+  &:hover {
+    background-color: darken($primary, 8%);
+    box-shadow: $button-elevation-hover;
+    transform: translateY(-1px);
+  }
+  
+  &:active {
+    background-color: darken($primary, 12%);
+    box-shadow: $button-elevation-active;
+    transform: translateY(0);
+  }
+  
+  &:focus-visible {
+    box-shadow: $button-elevation, 0 0 0 3px rgba($primary, 0.3);
+  }
+}
+
+// Secondary variant (outlined)
+.btn--secondary {
+  background-color: transparent;
+  color: $primary;
+  border-color: rgba($primary, 0.5);
+  
+  &:hover {
+    background-color: rgba($primary, 0.04);
+    border-color: $primary;
+  }
+  
+  &:active {
+    background-color: rgba($primary, 0.08);
+  }
+  
+  &:focus-visible {
+    box-shadow: 0 0 0 3px rgba($primary, 0.15);
+  }
+}
+
+// Text variant (text only)
+.btn--text {
+  background-color: transparent;
+  color: $primary;
+  border: none;
+  box-shadow: none;
+  
+  &:hover {
+    background-color: rgba($primary, 0.04);
+  }
+  
+  &:active {
+    background-color: rgba($primary, 0.08);
+  }
+  
+  &:focus-visible {
+    box-shadow: 0 0 0 3px rgba($primary, 0.15);
+  }
+}
+
+// Icon button variant
+.btn--icon {
+  min-width: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border-radius: 50%;
+  
+  &.btn--small {
+    min-width: 2rem;
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  &.btn--large {
+    min-width: 3rem;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+// Color variants
+.btn--success {
+  @extend .btn--primary;
+  background-color: #2e7d32;
+  
+  &:hover {
+    background-color: darken(#2e7d32, 8%);
+  }
+  
+  &:active {
+    background-color: darken(#2e7d32, 12%);
+  }
+}
+
+.btn--warning {
+  @extend .btn--primary;
+  background-color: #ed6c02;
+  
+  &:hover {
+    background-color: darken(#ed6c02, 8%);
+  }
+  
+  &:active {
+    background-color: darken(#ed6c02, 12%);
+  }
+}
+
+.btn--error {
+  @extend .btn--primary;
+  background-color: #d32f2f;
+  
+  &:hover {
+    background-color: darken(#d32f2f, 8%);
+  }
+  
+  &:active {
+    background-color: darken(#d32f2f, 12%);
+  }
+}
+
+// Loading state
+.btn--loading {
+  color: transparent;
+  pointer-events: none;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid currentColor;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: btn-spin 1s linear infinite;
+  }
+}
+
+@keyframes btn-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Specialized button variants
+.calculator-btn {
+  @extend .btn;
+  @extend .btn--primary;
+  @extend .btn--large;
+  
+  // Calculator-specific customizations
+  border-radius: 50px; // Override default radius for this variant
+  background: linear-gradient(135deg, $primary, darken($primary, 10%));
+  box-shadow: 0 4px 15px rgba($primary, 0.3);
+  
+  &:hover {
+    background: linear-gradient(135deg, darken($primary, 8%), darken($primary, 15%));
+    box-shadow: 0 4px 15px rgba($primary, 0.25);
+    
+    i {
+      transform: translateX(2px);
+    }
+  }
+  
+  i {
+    transition: transform 0.2s ease;
+  }
+}
+
+// Legacy class mappings for backward compatibility
+.btn-textblock-lite {
+  @extend .btn;
+  @extend .btn--primary;
+}
+
+.btn-textblock-lite--outline {
+  @extend .btn;
+  @extend .btn--secondary;
+}
+
+.btn-xl {
+  @extend .btn--xl;
+}

@@ -1,0 +1,218 @@
+header:
+  title: "Secure Your Home Loan with Confidence"
+  text: "Fast approvals, trusted advice, and the best deals for your bond."
+
+expert:
+  title: "Get pre-approved for a home loan today"
+  text: "Whether you're looking to buy or ready to put in an offer, we recommend you get pre-approved. Reach out to one of our experts now."
+  button 1 text: "Do it Yourself"
+  button 2 text: "Speak to an Expert"
+
+services:
+  title: "Services We Offer"
+  text: "We get you the best deal on your Home Loan by sourcing quotes from all the leading banks (including your own bank) for you to compare."
+  section: services
+  list:
+    - title: "Pre-qualification"
+      desc: "Know what you qualify for, we calculate affordability and verify credit checks."
+      icon: fas fa-tasks
+      link:
+        url: /contact
+        text: "Contact Us"
+    - title: "Bond Origination"
+      desc: "We negotiate the best terms and interest rate on your behalf."
+      icon: fas fas fa-home
+      link:
+        url: /contact
+        text: "Contact Us"
+    - title: "Advice and Guidance"
+      desc: "Support through every step."
+      icon: fas fa-shield-alt
+      link:
+        url: /contact
+        text: "Contact Us"
+
+articles:
+  title: "Articles"
+  text: ""
+  section: articles
+
+calculators:
+  title: "Home Loan Calculators"
+  text: "Use our Home loan Calculators to work out the size of home loan you are likely to qualify for and what your bond repayments will be."
+  section: calculators
+  list:
+    - title: "Bond Calculator"
+      desc: "Calculate the home loan you qualify for."
+      icon: fas fa-calculator
+      link:
+        url: /affordability-calculator
+        text: "Calculate"
+    - title: "Repayment Calculator"
+      desc: "Calculate your monthly bond repayments."
+      icon: fas fa-calculator
+      link:
+        url: /bond-calculator
+        text: "Calculate"
+    - title: "Transfer Cost Calculator"
+      desc: "Calculate your registration and transfer costs."
+      icon: fas fa-calculator
+      link:
+        url: /transfer-cost-calculator
+        text: "Calculate"
+
+more-calculators:
+  title: "More Calculators"
+  text: ""
+  section: more-calculators
+  list:
+    - title: "Amortisation Calculator"
+      desc: "Calculate how your repayment is structured."
+      icon: fas fa-calculator
+      link:
+        url: /amortisation-calculator
+        text: "Calculate"
+
+    - title: "Deposit Savings Calculator"
+      desc: "Calculate how much you need to save for your deposit."
+      icon: fas fa-calculator
+      link:
+        url: /deposit-savings-calculator
+        text: "Calculate"
+    - title: "Additional Payment Calculator"
+      desc: "Calculate your savings on your total home loan cost by paying a little extra into your bond."
+      icon: fas fa-calculator
+      link:
+        url: /additional-payment-calculator
+        text: "Calculate"
+
+textblock:
+  title: "Why The Bond Cellar?"
+  text: "If you're looking to make your dream of owning your own home a reality, you've come to the right place. We can help you with every step of your home ownership journey."
+  footer: "**OUR SERVICE IS FREE WITH NO OBLIGATION OR COST TO YOU!**"
+  section: textblock
+  list:
+    - title: "<strong>Step 1: Plan & Pre-Approval</strong> – Start with a clear strategy. We answer all your questions and get you a pre-approval."
+      image: "fas fa-circle"
+    - title: "<strong>Step 2: Make Your Move</strong> – Find your home and sign the Offer to Purchase with confidence."
+      image: "fas fa-circle"
+    - title: "<strong>Step 3: Securing Your Loan</strong> – We efficiently gather your final documentation for a strong application."
+      image: "fas fa-circle"
+    - title: "<strong>Step 4: Strategic Application</strong> – We apply to our panel of lenders, including your bank, to create competition."
+      image: "fas fa-circle"
+    - title: "<strong>Step 6: Select & Secure</strong> – You choose the winning offer, empowered with clarity and expert advice."
+      image: "fas fa-circle"
+    - title: "<strong>Step 7: Choose</strong> - You select the best home-loan offer."
+      image: "fas fa-circle"
+
+portfolio:
+  title: "Other Services"
+  text: "Some of our work"
+  section: portfolio
+  closebutton: "Close"
+
+about:
+  title: "About Us"
+  text2:
+    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+    <br><br>
+    Et harum quidem rerum facilis est et expedita distinctio.
+    <br><br>
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    "
+
+  text3: "TAILORED-MADE SERVICE FOR YOUR HOME OWNERSHIP JOURNEY"
+
+clients:
+  title: Bank Partners
+  section: clients
+  max-height: 120px
+  horizontal-scrolling: "" #"yes/no"
+  list:
+    - title: "ABSA"
+      url: https://www.absa.co.za
+      logo: assets/img/clients/absa-bw.png
+
+    - title: "FNB"
+      url: https://www.fnb.co.za/
+      logo: assets/img/clients/fnb-n.png
+
+    - title: "Housing Investment Partners"
+      url: https://www.hiphousing.co.za/
+      logo: assets/img/clients/hip.jpg
+
+    - title: "Investec"
+      url: https://www.investec.co.za/
+      logo: assets/img/clients/investec.png
+
+    - title: "Nedbank"
+      url: https://www.nedbank.co.za
+      logo: assets/img/clients/nedbank-bw.png
+
+    - title: "Rand Merchant Bank"
+      url: https://www.rmb.co.za
+      logo: assets/img/clients/rmb-img-n.png
+
+    - title: "Standard Bank"
+      url: https://www.standardbank.co.za/
+      logo: assets/img/clients/SBSA-bw.png
+    - title: "Sentinal Homes"
+      url: https://www.sentinelhomes.co.za/
+      logo: assets/img/clients/sentinal-homes.png
+
+team:
+  title: "Contact Us"
+  text: We would love to hear from you and assist you in your home buying journey.
+  # subtext: Text Below the Images, also Markdown is suppoted **Bold Text Allowed**
+  section: team
+  contact:
+  people:
+    - name: "Zelda Weaver"
+      role: "Property Finance Specialist"
+      image: assets/img/team/Zelda Weaver evo Homeloans.jpg
+      social:
+        - url: tel:082 414 1865
+          icon: fas fa-phone
+        - url: mailto:zelda.weaver@evogroup.co.za?subject=The Bond Cellar Website Enquiry
+          icon: fas fa-envelope
+        - url: https://www.facebook.com/profile.php?id=61580109487431
+          icon: fab fa-facebook-f
+
+testimonials:
+  title: "Testimonials"
+  text: ""
+  section: testimonials
+  people:
+    - name: "Hayden Ventress"
+      testimony: "Zelda Weaver is honestly the most helpful and kind person I have ever met! She goes above and beyond to guide clients through the entire process and makes everything feel so simple and stress-free. When it comes to getting bonds, she is truly the best — professional, efficient, and genuinely caring. I can’t recommend her enough!"
+
+    - name: "Richard Fincham"
+      testimony: "As the agents on this sale, we thought securing a bond for this agricultural property would be impossible. Zelda proved us wrong! She went above and beyond, navigating every challenge with expertise and determination to get it done. Her dedication and professionalism made the deal happen – we can’t recommend her highly enough! ☆☆☆☆☆"
+
+    - name: "Gary Whalley"
+      testimony: "Going the extra mile is stock standard stuff for Zelda . Her knowledge of how the banking sector works is of incredible value to all of our clients . Her hit rate is par excellence . Happy to recommend Zelda to anyone applying for finance to purchase a property"
+
+    - name: "Catherine Rennie"
+      testimony: "I have found Zelda very efficient and knowledgeable. She is prompt in responding and always follows up with my clients and keeps me updated."
+
+    - name: "Bev Bray"
+      testimony: "Zelda goes above and beyond to provide an exceptional service to our buyers. She works closely with them and keeps them informed every step of the way."
+
+contact:
+  title: "Contact Us"
+  text: ""
+  section: team
+
+footer:
+  legal: "Powered by evo Home Loans"
+  social:
+    - url: https://www.instagram.com/bluekeyhomefinancepoweredbyevo/
+      icon: "fab fa-instagram"
+    - url: https://www.facebook.com/profile.php?id=61580109487431
+      icon: "fab fa-facebook-f"
+    - url: https://www.linkedin.com/company/blue-key-home-finance-%E2%80%93-powered-by-evo/
+      icon: "fab fa-linkedin-in"
+      #- url: https://api.whatsapp.com/send?phone=27795620507
+      #  icon: "fab fa-whatsapp"
+      # - url: https://instagram.com
+      #   icon: "fab fa-instagram"
