@@ -8,8 +8,8 @@ background: gray
 
   <div class="row justify-content-center">
     <div class="col-md text-center" style="max-width: 500px;">
-      <h2 class="section-heading text-uppercase">Contact Us</h2>
-      <h3>Name Brad Burczak</h3>
+      <h2 class="section-heading text-uppercase">Contact</h2>
+      <h3>Brad Burczak</h3>
       <p>Call: <a href="tel:+27846866089">084 686 6089</a></p>
       <p>WhatsApp: <a href="https://wa.me/27846866089" target="_blank">Whatsapp Message</a></p>
       <p>Email: <a href="mailto:admin@thebondcellar.co.za?subject=Enquiry Mail from The Bond Cellar Website">admin@thebondcellar.co.za</a></p>

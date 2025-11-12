@@ -8,8 +8,8 @@ nav:
   - title: "Calculators"
     section: calculators
     
-  - title: "Testimonials"
-    section: testimonials
+  - title: "About"
+    section: about
 
   - title: "Contact"
     url: /contact
