@@ -38,10 +38,11 @@
       .nav-link {
         font-size: 14px;
         padding: 0.5rem 1rem;
-        color: #FFD700;
+        color: BA9A49;
         @include heading-font;
-        &:hover, &.active {
-          color: #FFE44D ;
+        &:hover,
+        &.active {
+          color: #ffe44d;
         }
       }
     }

@@ -19,17 +19,17 @@
 }
 
 .btn-primary {
-  background-color: #aaa;
+  background-color: #BA9A49;
   color: $primary;
   
   &:hover {
-    background-color: darken($primary, 10%);
+    background-color: darken($primary, 20%);
   }
 
   &:active {
     transform: scale(0.95);
     background-color: $primary;
-    color: $white;
+    color: #BA9A49;
   }
 }
 

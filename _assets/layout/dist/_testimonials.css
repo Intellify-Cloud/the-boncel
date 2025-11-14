@@ -31,7 +31,7 @@
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #FFD700, #D4AF37);
+  background: linear-gradient(90deg, BA9A49, #d4af37);
   border-radius: 2px;
 }
 #testimonials .section-subtitle {
@@ -45,11 +45,15 @@
   margin-right: auto;
   line-height: 1.6;
 }
-#testimonials h3, #testimonials h4, #testimonials h5, #testimonials .testimonial-name {
+#testimonials h3,
+#testimonials h4,
+#testimonials h5,
+#testimonials .testimonial-name {
   color: var(--color-header);
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
-#testimonials p, #testimonials .testimonial-text {
+#testimonials p,
+#testimonials .testimonial-text {
   color: var(--color-text-secondary);
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
@@ -99,7 +103,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #FFD700, #D4AF37, #FFD700);
+  background: linear-gradient(90deg, BA9A49, #d4af37, BA9A49);
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.3s ease;
@@ -117,7 +121,7 @@
 #testimonials .team-member img {
   width: 120px;
   height: 120px;
-  border: 5px solid #D4AF37;
+  border: 5px solid #d4af37;
   border-radius: 50%;
   margin-bottom: 1.5rem;
   object-fit: cover;
@@ -142,7 +146,7 @@
 .testimonial-card .testimonial-role,
 #testimonials .team-member .testimonial-role {
   font-size: 1rem;
-  color: #D4AF37;
+  color: #d4af37;
   font-weight: 500;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
@@ -169,7 +173,7 @@
 #testimonials .team-member .testimonial-text::after {
   content: '"';
   font-size: 3rem;
-  color: #FFD700;
+  color: BA9A49;
   opacity: 0.2;
   position: absolute;
   font-family: Georgia, serif;
@@ -198,7 +202,7 @@
 }
 .testimonial-card .rating .star,
 #testimonials .team-member .rating .star {
-  color: #FFD700;
+  color: BA9A49;
   font-size: 1.25rem;
 }
 
@@ -232,12 +236,14 @@
     width: 100px;
     height: 100px;
   }
-  #testimonials .testimonial-card h5, #testimonials .testimonial-card .testimonial-name,
+  #testimonials .testimonial-card h5,
+#testimonials .testimonial-card .testimonial-name,
 #testimonials #testimonials .team-member h5,
 #testimonials #testimonials .team-member .testimonial-name {
     font-size: 1.5rem;
   }
-  #testimonials .testimonial-card p, #testimonials .testimonial-card .testimonial-text,
+  #testimonials .testimonial-card p,
+#testimonials .testimonial-card .testimonial-text,
 #testimonials #testimonials .team-member p,
 #testimonials #testimonials .team-member .testimonial-text {
     font-size: 1rem;

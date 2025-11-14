@@ -112,13 +112,13 @@ portfolio:
   closebutton: "Close"
 
 about:
-  title: "About Us"
+  title: "About"
   text2:
     "Founded in 2025 by Bradley Burczak, The Bond Cellar was established to redefine the home loan experience through exceptional service, professionalism, and integrity. Recognising the need for a more personalised and consultative approach to mortgage origination, Bradley created a firm that values relationships as highly as results.
     <br><br>
     With over 11 years of experience in the real estate industry, Bradley brings a wealth of market knowledge and business acumen to every client interaction. He is the founder and owner of Burczak Properties, a boutique real estate agency based in Westville, serving both the Westville and greater Durban areas. As a qualified Principal Estate Agent, Bradley combines hands-on expertise with a strong academic background, holding a Bachelor of Business Administration and a Bachelor of Commerce in Business Management from the University of South Africa (UNISA).
 
-    The Bond Cellar is proudly powered by EVO Home Loans, one of South Africa’s leading bond origination networks. Through this partnership, Bradley and his team collaborate with all major banks to secure the most competitive home loan solutions tailored to each client’s unique needs.    
+    The Bond Cellar is proudly powered by EVO Home Loans, one of South Africa’s leading bond origination networks. Through this partnership, Bradley and his team collaborate with all major banks to secure the most competitive home loan solutions tailored to each client’s unique needs.
     <br><br>
     Whether assisting first-time buyers, seasoned investors, or clients seeking pre-approval, The Bond Cellar is dedicated to providing a seamless and sophisticated financing experience. Guided by a commitment to excellence, precision, and personalised service, we take pride in helping clients turn their property aspirations into reality — one home at a time."
 
@@ -176,8 +176,8 @@ team:
           icon: fas fa-phone
         - url: mailto:admin@thebondcellar.co.za?subject=The Bond Cellar Website Enquiry
           icon: fas fa-envelope
-        #- url: https://www.facebook.com/profile.php?id=61580109487431
-        #  icon: fab fa-facebook-f
+        - url: https://www.facebook.com/share/1JhkGPsDmv/?mibextid=wwXIfr
+          icon: fab fa-facebook-f
 
 testimonials:
   title: "Testimonials"
@@ -201,13 +201,11 @@ contact:
 footer:
   legal: "Powered by evo Home Loans"
   social:
-    - url: https://www.instagram.com/
+    - url: https://www.instagram.com/thebondcellar?igsh=b3V4N2trY2k3NW40&utm_source=qr
       icon: "fab fa-instagram"
-    - url: https://www.facebook.com/
+    - url: https://www.facebook.com/share/1JhkGPsDmv/?mibextid=wwXIfr
       icon: "fab fa-facebook-f"
-    - url: https://www.linkedin.com/
-      icon: "fab fa-linkedin-in"
-      #- url: https://api.whatsapp.com/send?phone=27795620507
-      #  icon: "fab fa-whatsapp"
-      # - url: https://instagram.com
-      #   icon: "fab fa-instagram"
+    #- url: https://www.linkedin.com/
+    #  icon: "fab fa-linkedin-in"
+    #- url: https://api.whatsapp.com/send?phone=27795620507
+    #  icon: "fab fa-whatsapp"

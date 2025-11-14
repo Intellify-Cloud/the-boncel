@@ -30,7 +30,7 @@
       transform: translateX(-50%);
       width: 60px;
       height: 3px;
-      background: linear-gradient(90deg, #FFD700, #D4AF37);
+      background: linear-gradient(90deg, BA9A49, #d4af37);
       border-radius: 2px;
     }
   }
@@ -48,12 +48,16 @@
   }
 
   // Headings inside cards
-  h3, h4, h5, .testimonial-name {
+  h3,
+  h4,
+  h5,
+  .testimonial-name {
     color: var(--color-header); // #021736
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   }
 
-  p, .testimonial-text {
+  p,
+  .testimonial-text {
     color: var(--color-text-secondary); // #555555
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   }
@@ -75,7 +79,9 @@
 }
 
 /* Remove background overlay */
-#testimonials::before { display: none; }
+#testimonials::before {
+  display: none;
+}
 
 /* TESTIMONIAL CARD – FULLY CONSISTENT */
 .testimonial-card,
@@ -99,9 +105,11 @@
   &::before {
     content: "";
     position: absolute;
-    top: 0; left: 0; right: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #FFD700, #D4AF37, #FFD700);
+    background: linear-gradient(90deg, BA9A49, #d4af37, BA9A49);
     transform: scaleX(0);
     transform-origin: center;
     transition: transform 0.3s ease;
@@ -120,7 +128,7 @@
   img {
     width: 120px;
     height: 120px;
-    border: 5px solid #D4AF37; // Metallic Gold
+    border: 5px solid #d4af37; // Metallic Gold
     border-radius: 50%;
     margin-bottom: 1.5rem;
     object-fit: cover;
@@ -146,7 +154,7 @@
   // Role / Title
   .testimonial-role {
     font-size: 1rem;
-    color: #D4AF37; // Gold
+    color: #d4af37; // Gold
     font-weight: 500;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
@@ -168,15 +176,21 @@
     &::after {
       content: '"';
       font-size: 3rem;
-      color: #FFD700;
+      color: BA9A49;
       opacity: 0.2;
       position: absolute;
       font-family: Georgia, serif;
       line-height: 1;
     }
 
-    &::before { top: -10px; left: -10px; }
-    &::after  { bottom: -30px; right: -10px; }
+    &::before {
+      top: -10px;
+      left: -10px;
+    }
+    &::after {
+      bottom: -30px;
+      right: -10px;
+    }
   }
 
   // Star Rating
@@ -187,7 +201,7 @@
     margin-top: auto;
 
     .star {
-      color: #FFD700;
+      color: BA9A49;
       font-size: 1.25rem;
     }
   }
@@ -195,7 +209,11 @@
 
 /* Gold Highlight */
 .highlight {
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(212, 175, 55, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 215, 0, 0.1),
+    rgba(212, 175, 55, 0.05)
+  );
   padding: 0.15em 0.3em;
   border-radius: 4px;
   font-weight: 600;
@@ -207,25 +225,45 @@
   #testimonials {
     padding: 4rem 1rem;
 
-    .section-heading { font-size: 2.5rem; }
-    .section-subtitle { font-size: 1rem; margin-bottom: 3rem; }
+    .section-heading {
+      font-size: 2.5rem;
+    }
+    .section-subtitle {
+      font-size: 1rem;
+      margin-bottom: 3rem;
+    }
 
     .testimonial-card,
     #testimonials .team-member {
       padding: 1.5rem;
       min-height: 350px;
 
-      img { width: 100px; height: 100px; }
-      h5, .testimonial-name { font-size: 1.5rem; }
-      p, .testimonial-text { font-size: 1rem; }
+      img {
+        width: 100px;
+        height: 100px;
+      }
+      h5,
+      .testimonial-name {
+        font-size: 1.5rem;
+      }
+      p,
+      .testimonial-text {
+        font-size: 1rem;
+      }
     }
   }
 }
 
 // Fade-in
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .testimonial-card,
@@ -233,6 +271,8 @@
   animation: fadeInUp 0.6s ease-out forwards;
 
   @for $i from 1 through 6 {
-    &:nth-child(#{$i}) { animation-delay: #{$i * 0.1}s; }
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.1}s;
+    }
   }
 }
