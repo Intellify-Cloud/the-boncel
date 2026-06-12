@@ -1,17 +1,21 @@
 @charset "utf-8";
 
-// Define theme colors BEFORE Bootstrap imports so they override Bootstrap's defaults
-$primary: #00ACC8;
-$white: rgb(255, 255, 255);
-$black: #000;
-$spacer: 1rem;
-$border-width: 3px;
+// ============================================================
+// BOOTSTRAP VARIABLE OVERRIDES (must be set BEFORE Bootstrap import)
+// ============================================================
+$primary:       #00ACC8;
+$white:         rgb(255, 255, 255);
+$black:         #000;
+$spacer:        1rem;
+$border-width:  3px;
 $border-radius: 0;
 $enable-rounded: false;
 $enable-shadows: true;
 $enable-gradients: false;
 
-// CSS Custom Properties for the new design system (used by _services.scss, _team.scss, etc.)
+// ============================================================
+// CSS Custom Properties
+// ============================================================
 :root {
   --color-header: #021736;
   --color-section-bg: #F8F9FA;
@@ -21,37 +25,51 @@ $enable-gradients: false;
   --color-border: #E5E5E5;
 }
 
-// Import Bootstrap
+// ============================================================
+// IMPORT BOOTSTRAP (uses @import internally - @use not supported)
+// ============================================================
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-// Images
-$header-image: "./img/1.jpg";
-$contact-image: "./img/contact.png";
+// ============================================================
+// ASSET PATHS
+// ============================================================
+$header-image:     "./img/1.jpg";
+$contact-image:    "./img/contact.png";
 
-// Import custom modular SCSS
-@import "base/variables";
-@import "base/mixins";
-@import "base/page";
+// ============================================================
+// DESIGN SYSTEM
+// ============================================================
+@use 'base/variables';
+@use 'base/mixins';
 
-@import "components/buttons";
-@import "components/navbar";
-@import "components/client-scroll";
+// ============================================================
+// COMPONENTS
+// ============================================================
+@use 'components/buttons';
+@use 'components/navbar';
+@use 'components/client-scroll';
 
-@import "layout/calculators";
-@import "layout/clients";
-@import "layout/contact";
-@import "layout/expert";
-@import "layout/footer";
-@import "layout/masthead";
-@import "layout/services";
-@import "layout/portfolio";
-@import "layout/team";
-@import "layout/testimonials";
-@import "layout/textblock";
+// ============================================================
+// LAYOUT
+// ============================================================
+@use 'layout/calculators';
+@use 'layout/clients';
+@use 'layout/contact';
+@use 'layout/expert';
+@use 'layout/footer';
+@use 'layout/masthead';
+@use 'layout/services';
+@use 'layout/portfolio';
+@use 'layout/team';
+@use 'layout/testimonials';
+@use 'layout/textblock';
 
+// ============================================================
+// GLOBAL STYLES
+// ============================================================
 body {
     overflow-x: hidden;
     font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;

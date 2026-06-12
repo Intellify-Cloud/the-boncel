@@ -1,15 +1,18 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
 // Hero Section aligned with dark teal design theme
 header.hero {
   display: flex;
-  align-items: center; // vertical center
-  justify-content: center; // horizontal center
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  color: #fff; // Text Unde the Big Title
+  color: #fff;
   background: linear-gradient(
       135deg,
-      rgba(14, 31, 34, 0.733) 0%,
-      rgba(28, 61, 68, 0.664) 10%,
-      rgba(14, 31, 34, 0.61) 100%
+      $brand-teal-dark 0%,
+      $brand-teal-mid 10%,
+      $brand-teal-light 100%
     ),
     url("#{$header-image}");
   background-repeat: no-repeat;
@@ -17,13 +20,10 @@ header.hero {
   background-size: cover;
   background-attachment: fixed;
 
-  margin-top: 80px; // ✅ hero begins just below navbar
-  height: calc(100vh - 80px); // ✅ full screen minus navbar
+  margin-top: 80px;
+  height: calc(100vh - 80px);
   width: 100%;
-  margin-left: 0; // ✅ Only reset horizontal margins
-  margin-right: 0; // ✅ Keep the margin-top intact
 
-  // remove animated overlay
   &::before {
     display: none;
   }
@@ -37,9 +37,9 @@ header.hero {
   }
 
   .intro-heading {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: $font-family-heading;
     font-size: clamp(2rem, 6vw, 4.5rem);
-    font-weight: 700;
+    font-weight: $font-weight-black;
     margin-top: 1.5rem;
     margin-bottom: 0.8rem;
     color: #ffffff;
@@ -49,10 +49,10 @@ header.hero {
     &::after {
       content: "";
       display: block;
-      margin: 1rem auto 0 auto;
+      margin: 1rem auto 0;
       width: 80px;
       height: 4px;
-      background: linear-gradient(90deg, #BA9A49, #BA9A49);
+      background: linear-gradient(90deg, $brand-gold, $brand-gold);
       border-radius: 2px;
     }
   }
@@ -70,13 +70,13 @@ header.hero {
     display: inline-block;
     padding: 16px 32px;
     font-size: clamp(0.9rem, 2vw, 1.1rem);
-    font-weight: 700;
-    border-radius: 50px;
+    font-weight: $font-weight-black;
+    border-radius: $radius-lg;
     text-decoration: none;
-    background: linear-gradient(135deg, #BA9A49 0%, #BA9A49 100%);
-    color: #021736; // Hero Button Text Colour
+    background: linear-gradient(135deg, $brand-gold 0%, $brand-gold 100%);
+    color: $brand-navy;
     border: none;
-    box-shadow: 0 8px 18px rgba(255, 228, 77, 0.25);
+    box-shadow: 0 $spacer 18px rgba(255, 228, 77, 0.25);
   }
 
   .scroll-indicator {

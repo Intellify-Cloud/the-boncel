@@ -17,6 +17,12 @@ analytics:
 collections:
   portfolio:
 
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /social_916x509.jpg
+
 markdown: kramdown
 
 plugins:

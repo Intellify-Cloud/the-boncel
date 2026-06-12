@@ -1,64 +1,31 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
 /* testimonials.scss – Text-only cards */
 #testimonials {
-  position: relative;
-  padding: 6rem 2rem;
-  width: 100%;
-  background-color: var(--color-section-bg);
+  @include section-padding;
+  @include container-wide;
   text-align: center;
+  color: $color-text-primary;
   min-height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: var(--color-text-primary);
+  background-color: $color-section-bg;
 
   h2,
   .section-heading {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 700;
-    color: var(--color-header);
-    letter-spacing: -0.02em;
-    margin-bottom: 1rem;
-    position: relative;
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -0.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, #BA9A49, #d4af37);
-      border-radius: 2px;
-    }
+    @include section-heading;
   }
 
   .section-subtitle {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-size: 1.125rem;
-    color: var(--color-text-secondary);
-    font-weight: 400;
-    margin-bottom: 4rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
+    @include section-subtitle;
   }
 
   .testimonials-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1rem;
-
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-      max-width: 600px;
-      gap: 1.5rem;
-    }
+    @include grid-mobile-to-single(600px);
+    gap: $spacer-lg;
+    padding-top: 0;
   }
 }
 
@@ -66,43 +33,17 @@
   display: none;
 }
 
-/* Text-only testimonial card */
+/* Testimonial Card */
 .testimonial-card {
-  background: var(--color-card-calc);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 2.5rem 2rem;
+  @include card-base;
+  @include card-hover-gold-bar;
+  @include fade-in-up(0.1s, 4);
+  padding: $spacer-2xl $spacer-xl;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  overflow: hidden;
   min-height: auto;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #BA9A49, #d4af37);
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.3s ease;
-  }
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
-
-    &::before {
-      transform: scaleX(1);
-    }
-  }
 
   .testimonial-text-wrapper {
     display: flex;
@@ -115,16 +56,16 @@
     font-style: italic;
     font-size: 1.05rem;
     line-height: 1.7;
-    font-weight: 400;
-    color: var(--color-text-secondary);
+    font-weight: $font-weight-normal;
+    color: $color-text-secondary;
     position: relative;
-    font-family: 'Roboto', sans-serif;
+    font-family: $font-family-body;
 
     &::before {
       content: "\201C";
       font-family: Georgia, serif;
       font-size: 4rem;
-      color: #BA9A49;
+      color: $brand-gold;
       opacity: 0.3;
       display: block;
       line-height: 1;
@@ -135,10 +76,10 @@
   .client-name {
     margin: 0.5rem 0 0;
     font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--color-header);
+    font-weight: $font-weight-black;
+    color: $color-header;
     letter-spacing: -0.01em;
-    font-family: "Roboto", sans-serif;
+    font-family: $font-family-heading;
   }
 
   .client-title {
@@ -147,26 +88,15 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-weight: 600;
-    font-family: "Roboto", sans-serif;
+    font-weight: $font-weight-medium;
+    font-family: $font-family-heading;
   }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+@include media-md-down {
   #testimonials {
-    padding: 4rem 1rem;
-
-    .section-heading {
-      font-size: 2.5rem;
-    }
-    .section-subtitle {
-      font-size: 1rem;
-      margin-bottom: 3rem;
-    }
-
     .testimonial-card {
-      padding: 2rem 1.5rem;
+      padding: $spacer-xl $spacer-lg;
 
       .quote {
         font-size: 0.95rem;
@@ -176,25 +106,4 @@
       }
     }
   }
-}
-
-/* Fade-in */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.testimonial-card {
-  animation: fadeInUp 0.6s ease-out forwards;
-
-  &:nth-child(1) { animation-delay: 0s; }
-  &:nth-child(2) { animation-delay: 0.1s; }
-  &:nth-child(3) { animation-delay: 0.2s; }
-  &:nth-child(4) { animation-delay: 0.3s; }
 }

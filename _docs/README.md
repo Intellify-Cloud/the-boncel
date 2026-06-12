@@ -6,27 +6,21 @@ This folder contains architectural and technical review documentation for thebon
 
 - **[architecture-review.md](./architecture-review.md)** - Full architecture, stack, and code review
 - **[technical-standards.md](./technical-standards.md)** - Standards and best practices guide
+- **[seo-strategy.md](./seo-strategy.md)** - SEO implementation plan
 
-## Quick Summary
+## Completed SEO Improvements
 
-### Tech Stack
-- **Static Site Generator**: Jekyll 4.x
-- **CSS Framework**: Bootstrap 4.3.1
-- **JavaScript**: jQuery 3.4.1 + Bootstrap JS
-- **Build**: Webpack 4
+The following SEO enhancements have been implemented:
 
-### Key Recommendations
+- Fixed location consistency in `_config.yml` (Durban, KZN)
+- Added `lang: en-ZA` for local language targeting
+- Created `_includes/structured-data.html` with FinancialService schema (JSON-LD)
+- Added unique meta descriptions and supporting copy to all calculator pages
+- Created proper `robots.txt` with sitemap reference
+- Added social preview defaults for Open Graph and Twitter card output
 
-1. **Migrate to Bootstrap 5** to eliminate jQuery dependency
-2. **Fix content inconsistencies** in `_config.yml` (Durban vs Cape Town references)
-3. **Remove inline JavaScript** in `_layouts/page.html`
-4. **Clean up dist folders** - they should not be committed
-5. **Update missing Step 5** in `_data/sitetext.yml`
-6. **Add ESLint/stylelint** for code quality enforcement
-7. **Add development webpack config** with source maps
+## Pending SEO Tasks
 
-### Strengths
-- Excellent modular SCSS architecture
-- Proper use of CSS custom properties for design tokens
-- Good accessibility baseline
-- Clean separation between content and presentation
+- Replace the current social image with a dedicated 1200x630px Open Graph preview image
+- Add FAQ schema for calculators where matching FAQ content is visible on-page
+- Consider location-specific landing pages for SEO

@@ -1,13 +1,129 @@
-// Variables
+// ============================================================
+// DESIGN TOKENS
+// ============================================================
 
-// Restated Bootstrap Variables
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #868e96 !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
+// ----------------------------------------------------------
+// Brand Colors
+// ----------------------------------------------------------
+$brand-gold:        #BA9A49;
+$brand-gold-light:  #d4af37;
+$brand-navy:        #021736;
+$brand-teal-dark:   rgba(14, 31, 34, 0.733);
+$brand-teal-mid:    rgba(28, 61, 68, 0.664);
+$brand-teal-light:  rgba(14, 31, 34, 0.61);
 
+// ----------------------------------------------------------
+// Semantic Colors (mapped from CSS custom properties)
+// ----------------------------------------------------------
+$color-header:          var(--color-header, #021736);
+$color-section-bg:      var(--color-section-bg, #F8F9FA);
+$color-text-primary:    var(--color-text-primary, #1A1A1A);
+$color-text-secondary:  var(--color-text-secondary, #555555);
+$color-card:            var(--color-card-calc, #FFFFFF);
+$color-border:          var(--color-border, #E5E5E5);
+
+// ----------------------------------------------------------
+// Bootstrap Overrides (set BEFORE importing Bootstrap)
+// ----------------------------------------------------------
+$primary:       #00ACC8;
+$white:         rgb(255, 255, 255);
+$black:         #000;
+$spacer:        1rem;
+$border-width:  3px;
+$border-radius: 0;
+$enable-rounded: false;
+$enable-shadows: true;
+$enable-gradients: false;
+
+// Grayscale palette
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #868e96;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+
+// ----------------------------------------------------------
+// Typography
+// ----------------------------------------------------------
+$font-family-base:    'Roboto', 'Helvetica', 'Arial', sans-serif;
+$font-family-heading: $font-family-base;
+$font-family-body:    $font-family-base;
+
+$font-weight-normal:  400;
+$font-weight-medium:  500;
+$font-weight-bold:    700;
+$font-weight-black:   900;
+
+$line-height-base:    1.5;
+$line-height-heading: 1.2;
+
+// ----------------------------------------------------------
+// Spacing Scale
+// ----------------------------------------------------------
+$spacer-xs: 0.25rem;
+$spacer-sm: 0.5rem;
+$spacer-md: 1rem;
+$spacer-lg: 1.5rem;
+$spacer-xl: 2rem;
+$spacer-2xl: 3rem;
+$spacer-3xl: 4rem;
+$spacer-4xl: 5rem;
+$spacer-6xl: 6rem;
+
+// ----------------------------------------------------------
+// Layout
+// ----------------------------------------------------------
+$section-padding-vertical: 6rem;
+$section-padding-horizontal: 2rem;
+$container-max-width: 1200px;
+$container-max-width-narrow: 900px;
+$container-max-width-wide: 1100px;
+
+// ----------------------------------------------------------
+// Shadows
+// ----------------------------------------------------------
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+$shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+$shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.18);
+$shadow-gold: 0 4px 15px rgba($brand-gold, 0.3);
+$shadow-gold-hover: 0 6px 16px rgba($brand-gold, 0.35);
+
+// ----------------------------------------------------------
+// Transitions
+// ----------------------------------------------------------
+$transition-fast: 0.15s ease;
+$transition-base: 0.2s ease;
+$transition-slow: 0.3s ease;
+$transition-bounce: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+// ----------------------------------------------------------
+// Border Radius
+// ----------------------------------------------------------
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 50px;
+$radius-full: 50%;
+
+// ----------------------------------------------------------
+// Border Radius
+// ----------------------------------------------------------
+$border-width-default: 1px;
+
+// ----------------------------------------------------------
+// Asset Paths
+// ----------------------------------------------------------
+$header-image:     "./img/1.jpg";
+$contact-image:    "./img/contact.png";
+
+// ----------------------------------------------------------
+// Breakpoints (for use in mixins)
+// ----------------------------------------------------------
+$breakpoint-sm:  576px;
+$breakpoint-md:  768px;
+$breakpoint-lg:  992px;
+$breakpoint-xl:  1200px;

@@ -1,6 +1,8 @@
-// Footer SCSS
-.footer {
-  background: #021736;
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+footer.footer {
+  background: $brand-navy;
   color: rgba(255, 255, 255, 0.85);
   padding: 64px 0 48px;
   position: relative;
@@ -20,16 +22,16 @@
   grid-template-columns: 1.2fr auto 1fr;
   gap: 48px;
   align-items: start;
-  max-width: 1200px;
+  max-width: $container-max-width;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 $spacer-md;
 
-  @media (max-width: 992px) {
+  @include media-lg-down {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
   }
 
-  @media (max-width: 768px) {
+  @include media-md-down {
     grid-template-columns: 1fr;
     gap: 32px;
     text-align: center;
@@ -44,37 +46,36 @@
   &--center {
     justify-self: center;
     text-align: center;
-
-    @media (max-width: 768px) {
-      justify-self: center;
-    }
   }
 
   &--end {
     justify-self: end;
     text-align: left;
+  }
+}
 
-    @media (max-width: 768px) {
-      justify-self: center;
-      text-align: center;
-    }
+@include media-md-down {
+  .footer-section--center,
+  .footer-section--end {
+    justify-self: center;
+    text-align: center;
   }
 }
 
 .footer-heading {
-  color: #BA9A49;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  color: $brand-gold;
+  font-family: $font-family-heading;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: $font-weight-black;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin: 0 0 0.5rem;
 }
 
 .footer-company {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: $font-family-heading;
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: $font-weight-black;
   color: #ffffff;
   margin: 0 0 0.5rem;
 }
@@ -82,17 +83,17 @@
 .copyright {
   color: rgba(255, 255, 255, 0.55);
   font-size: 0.875rem;
-  font-weight: 400;
+  font-weight: $font-weight-normal;
   margin: 0;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: $font-family-base;
 }
 
 .footer-address {
   color: rgba(255, 255, 255, 0.65);
   font-size: 0.875rem;
-  font-weight: 400;
+  font-weight: $font-weight-normal;
   margin: 0;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: $font-family-base;
   line-height: 1.5;
 }
 
@@ -103,25 +104,19 @@
   a {
     color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
-    transition: color 0.3s ease;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    transition: color $transition-slow;
+    font-family: $font-family-base;
 
     &:hover {
-      color: #BA9A49;
+      color: $brand-gold;
     }
   }
 }
 
 .social-buttons {
+  @include reset-list;
   display: flex;
   gap: 14px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  @media (max-width: 768px) {
-    justify-content: center;
-  }
 }
 
 .social-item {
@@ -129,43 +124,16 @@
 }
 
 .social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.75);
-  text-decoration: none;
-  font-size: 18px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-
-  &:hover,
-  &:focus {
-    color: #ffffff;
-    background: #BA9A49;
-    border-color: #BA9A49;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(186, 154, 73, 0.35);
-  }
-
-  i {
-    position: relative;
-    z-index: 1;
-  }
+  @include social-button-circle;
 }
 
 .quicklinks {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  @include reset-list;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 
-  @media (max-width: 768px) {
+  @include media-md-down {
     align-items: center;
   }
 
@@ -173,13 +141,13 @@
     color: rgba(255, 255, 255, 0.65);
     text-decoration: none;
     font-size: 0.9rem;
-    font-weight: 400;
-    transition: color 0.3s ease;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: $font-weight-normal;
+    transition: color $transition-slow;
+    font-family: $font-family-base;
 
     &:hover,
     &:focus {
-      color: #BA9A49;
+      color: $brand-gold;
     }
   }
 }
@@ -191,7 +159,7 @@
   right: 24px;
   z-index: 1000;
 
-  @media (max-width: 768px) {
+  @include media-md-down {
     bottom: 16px;
     right: 16px;
   }
@@ -207,10 +175,10 @@
   text-decoration: none;
   border-radius: 28px;
   box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
-  font-weight: 500;
+  font-weight: $font-weight-medium;
   font-size: 14px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  transition: all $transition-slow;
+  font-family: $font-family-base;
 
   &:hover,
   &:focus {
@@ -224,7 +192,7 @@
     font-size: 22px;
   }
 
-  @media (max-width: 768px) {
+  @include media-md-down {
     padding: 12px 16px;
     border-radius: 24px;
 

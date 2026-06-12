@@ -1,117 +1,52 @@
-// Services Section – Card/Column Layout
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
 #services {
-  position: relative;
-  padding: 6rem 2rem;
-  width: 100%;
-  background-color: var(--color-section-bg);
+  @include section-padding;
+  @include container-wide;
   text-align: center;
-  color: var(--color-text-primary);
+  color: $color-text-primary;
+  background-color: $color-section-bg;
 
   h2,
   .section-heading {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 700;
-    color: var(--color-header);
-    letter-spacing: -0.02em;
-    margin-bottom: 1rem;
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -0.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, #BA9A49, #d4af37);
-      border-radius: 2px;
-    }
+    @include section-heading;
   }
 
   .section-subtitle {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-size: 1.125rem;
-    color: var(--color-text-secondary);
-    font-weight: 400;
-    margin-bottom: 4rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
+    @include section-subtitle;
   }
 
   .services-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1rem;
-
-    @media (max-width: 992px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      max-width: 500px;
-    }
+    @include grid-responsive-cards(3);
+    padding-top: 0;
   }
 
   .service-card {
-    background: var(--color-card-calc);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 2.5rem 2rem;
+    @include card-base;
+    @include card-hover-gold-bar;
+    padding: $spacer-2xl $spacer-xl;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 380px;
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #BA9A49, #d4af37);
-      transform: scaleX(0);
-      transform-origin: center;
-      transition: transform 0.3s ease;
-    }
-
-    &:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-
-      &::before {
-        transform: scaleX(1);
-      }
-    }
 
     .service-icon {
       width: 80px;
       height: 80px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(186, 154, 73, 0.08));
+      border-radius: $radius-full;
+      background: linear-gradient(135deg, rgba($brand-gold-light, 0.15), rgba($brand-gold, 0.08));
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1.5rem;
-      transition: all 0.3s ease;
+      margin-bottom: $spacer-lg;
+      transition: all $transition-slow;
 
       i {
         font-size: 2rem;
-        color: #BA9A49;
-        transition: transform 0.3s ease;
+        color: $brand-gold;
+        transition: transform $transition-slow;
       }
 
       &:hover i {
@@ -120,18 +55,18 @@
     }
 
     .service-heading {
-      margin: 0 0 1rem;
+      margin: 0 0 $spacer-md;
       font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--color-header);
-      font-family: "Roboto", sans-serif;
+      font-weight: $font-weight-black;
+      color: $color-header;
+      font-family: $font-family-heading;
       letter-spacing: -0.01em;
       line-height: 1.3;
     }
 
     .service-description {
       font-size: 1rem;
-      color: var(--color-text-secondary);
+      color: $color-text-secondary;
       line-height: 1.6;
       margin-bottom: 2rem;
       flex-grow: 1;
@@ -146,46 +81,11 @@
   }
 }
 
-#services::before {
-  display: none;
-}
-
-@media (max-width: 768px) {
+@include media-md-down {
   #services {
-    padding: 4rem 1rem;
-
-    .section-heading {
-      font-size: 2.5rem;
-    }
-    .section-subtitle {
-      font-size: 1rem;
-      margin-bottom: 3rem;
-    }
     .service-card {
-      padding: 2rem 1.5rem;
+      padding: $spacer-xl $spacer-lg;
       min-height: auto;
     }
   }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-#services .service-card {
-  animation: fadeInUp 0.6s ease-out forwards;
-
-  &:nth-child(1) { animation-delay: 0s; }
-  &:nth-child(2) { animation-delay: 0.1s; }
-  &:nth-child(3) { animation-delay: 0.2s; }
-  &:nth-child(4) { animation-delay: 0.3s; }
-  &:nth-child(5) { animation-delay: 0.4s; }
-  &:nth-child(6) { animation-delay: 0.5s; }
 }
