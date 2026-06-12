@@ -1,19 +1,31 @@
 <!-- Footer -->
-<footer class="footer" id="footer">
+<footer class="footer footer--dark" id="footer">
   <div class="container">
     <div class="footer-grid">
       <!-- Copyright -->
       <div class="footer-section">
+        <p class="footer-company">{{ site.company }}</p>
         <p class="copyright">Copyright &copy; {{ site.company }} {{ 'now' | date: "%Y" }}</p>
+        {% if site.address %}
+        <p class="footer-address">{{ site.address }}</p>
+        {% endif %}
+        {% if site.data.sitetext.footer.legal %}
+        <p class="footer-legal">
+          <a href="https://evohomeloans.co.za" target="_blank" rel="noopener noreferrer">
+            {{ site.data.sitetext.footer.legal }}
+          </a>
+        </p>
+        {% endif %}
       </div>
 
       <!-- Social Media -->
       <div class="footer-section footer-section--center">
+        <p class="footer-heading">Follow Us</p>
         <ul class="social-buttons">
           {% for link in site.data.sitetext.footer.social %}
           <li class="social-item">
             {% if link.url %}
-            <a href="{{ link.url }}" class="social-link" target="_blank" rel="noopener noreferrer">
+            <a href="{{ link.url }}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="{{ link.icon | remove: 'fab fa-' }}">
               {% if link.icon %}<i class="{{ link.icon }}"></i>{% endif %}
             </a>
             {% endif %}
@@ -22,16 +34,13 @@
         </ul>
       </div>
 
-      <!-- Legal -->
+      <!-- Contact -->
       <div class="footer-section footer-section--end">
+        <p class="footer-heading">Get in Touch</p>
         <ul class="quicklinks">
-          {% if site.data.sitetext.footer.legal %}
-          <li class="list-inline-item">
-            <a href="https://evohomeloans.co.za" target="_blank" style="color: black;">
-              {{ site.data.sitetext.footer.legal }}
-            </a>
+          <li>
+            <a href="mailto:{{ site.email }}">{{ site.email_display | default: site.email }}</a>
           </li>
-          {% endif %}
         </ul>
       </div>
     </div>
