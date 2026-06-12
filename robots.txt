@@ -1,0 +1,10 @@
+---
+sitemap: false
+---
+Sitemap: {{ site.url }}/sitemap.xml
+
+User-agent: *
+Allow: /
+
+# Prevent indexing of draft content if used
+Disallow: /*/draft/

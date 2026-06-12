@@ -1,0 +1,28 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FinancialService",
+  "name": {{ site.company | jsonify }},
+  "image": {{ site.logo | absolute_url | jsonify }},
+  "telephone": {{ site.telephone | jsonify }},
+  "email": {{ site.email | jsonify }},
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Shop 2, Salamanca Centre, 39 Maryvale Road",
+    "addressLocality": "Dawncliffe",
+    "postalCode": "3629",
+    "addressRegion": "KZN",
+    "addressCountry": "ZA"
+  },
+  "url": {{ site.url | jsonify }},
+  "priceRange": "Negotiated rates with multiple banks",
+  "serviceType": "Bond Origination",
+  "areaServed": {{ site.area_served | jsonify }},
+  "sameAs": {{ site.same_as | jsonify }},
+  "provider": {
+    "@type": "Organization",
+    "name": "EVO Home Loans",
+    "url": "https://evohomeloans.co.za"
+  }
+}
+</script>
