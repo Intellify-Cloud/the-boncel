@@ -202,12 +202,56 @@ contact:
   section: team
 
 footer:
-  legal: "Powered by evo Home Loans"
+  description: "The Bond Cellar helps South African home buyers secure home loan pre-approval, compare bank offers, and move through the bond process with calm, expert guidance."
+  copyright: "Copyright &copy; The Bond Cellar"
+  powered_by:
+    name: "Powered by evo Home Loans"
+    href: "https://evohomeloans.co.za"
+  legal_links:
+    - name: "Privacy"
+      href: /privacy-statement
+    - name: "Legal"
+      href: /legal
+    - name: "Data Sharing"
+      href: /data-sharing-agreement
+  sections:
+    - title: "Home Loans"
+      links:
+        - name: "Pre-Qualification"
+          href: /#services
+        - name: "Bond Origination"
+          href: /#services
+        - name: "Expert Guidance"
+          href: /#services
+        - name: "Contact an Expert"
+          href: /contact
+    - title: "Calculators"
+      links:
+        - name: "Affordability Calculator"
+          href: /affordability-calculator
+        - name: "Bond Calculator"
+          href: /bond-calculator
+        - name: "Transfer Cost Calculator"
+          href: /transfer-cost-calculator
+        - name: "Deposit Savings Calculator"
+          href: /deposit-savings-calculator
+    - title: "Company"
+      links:
+        - name: "About The Bond Cellar"
+          href: /#about
+        - name: "Bank Partners"
+          href: /#clients
+        - name: "Testimonials"
+          href: /#testimonials
+        - name: "Contact"
+          href: /contact
   social:
     - url: https://www.instagram.com/thebondcellar?igsh=b3V4N2trY2k3NW40&utm_source=qr
-      icon: "fab fa-instagram"
+      icon: "fa-brands fa-instagram"
+      label: "Instagram"
     - url: https://www.facebook.com/share/1JhkGPsDmv/?mibextid=wwXIfr
-      icon: "fab fa-facebook-f"
+      icon: "fa-brands fa-facebook-f"
+      label: "Facebook"
     #- url: https://www.linkedin.com/
     #  icon: "fab fa-linkedin-in"
     #- url: https://api.whatsapp.com/send?phone=27795620507

@@ -26,7 +26,7 @@ $enable-gradients: false;
 }
 
 // ============================================================
-// IMPORT BOOTSTRAP (uses @import internally - @use not supported)
+// IMPORT BOOTSTRAP
 // ============================================================
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
@@ -40,39 +40,40 @@ $header-image:     "./img/1.jpg";
 $contact-image:    "./img/contact.png";
 
 // ============================================================
-// DESIGN SYSTEM
+// IMPORT DESIGN SYSTEM (uses @import for Bootstrap compatibility)
 // ============================================================
-@use 'base/variables';
-@use 'base/mixins';
+@import "base/variables";
+@import "base/mixins";
+@import "base/page";
 
 // ============================================================
 // COMPONENTS
 // ============================================================
-@use 'components/buttons';
-@use 'components/navbar';
-@use 'components/client-scroll';
+@import "components/buttons";
+@import "components/navbar";
+@import "components/client-scroll";
 
 // ============================================================
 // LAYOUT
 // ============================================================
-@use 'layout/calculators';
-@use 'layout/clients';
-@use 'layout/contact';
-@use 'layout/expert';
-@use 'layout/footer';
-@use 'layout/masthead';
-@use 'layout/services';
-@use 'layout/portfolio';
-@use 'layout/team';
-@use 'layout/testimonials';
-@use 'layout/textblock';
+@import "layout/calculators";
+@import "layout/clients";
+@import "layout/contact";
+@import "layout/expert";
+@import "layout/footer";
+@import "layout/masthead";
+@import "layout/services";
+@import "layout/portfolio";
+@import "layout/team";
+@import "layout/testimonials";
+@import "layout/textblock";
 
 // ============================================================
 // GLOBAL STYLES
 // ============================================================
 body {
     overflow-x: hidden;
-    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-family: $font-family-base;
     -webkit-tap-highlight-color: $primary;
 }
 

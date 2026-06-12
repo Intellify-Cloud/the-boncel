@@ -1,168 +1,179 @@
-@use '../base/variables' as *;
-@use '../base/mixins' as *;
+.footer7 {
+  padding: 8rem 0;
 
-footer.footer {
-  background: $brand-navy;
-  color: rgba(255, 255, 255, 0.85);
-  padding: 64px 0 48px;
-  position: relative;
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
 
-  &--fixed {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     width: 100%;
-    z-index: 10;
-  }
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.2fr auto 1fr;
-  gap: 48px;
-  align-items: start;
-  max-width: $container-max-width;
-  margin: 0 auto;
-  padding: 0 $spacer-md;
-
-  @include media-lg-down {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
   }
 
-  @include media-md-down {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    text-align: center;
-  }
-}
-
-.footer-section {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-
-  &--center {
-    justify-self: center;
-    text-align: center;
-  }
-
-  &--end {
-    justify-self: end;
-    text-align: left;
-  }
-}
-
-@include media-md-down {
-  .footer-section--center,
-  .footer-section--end {
-    justify-self: center;
-    text-align: center;
-  }
-}
-
-.footer-heading {
-  color: $brand-gold;
-  font-family: $font-family-heading;
-  font-size: 0.8rem;
-  font-weight: $font-weight-black;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin: 0 0 0.5rem;
-}
-
-.footer-company {
-  font-family: $font-family-heading;
-  font-size: 1.25rem;
-  font-weight: $font-weight-black;
-  color: #ffffff;
-  margin: 0 0 0.5rem;
-}
-
-.copyright {
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 0.875rem;
-  font-weight: $font-weight-normal;
-  margin: 0;
-  font-family: $font-family-base;
-}
-
-.footer-address {
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 0.875rem;
-  font-weight: $font-weight-normal;
-  margin: 0;
-  font-family: $font-family-base;
-  line-height: 1.5;
-}
-
-.footer-legal {
-  margin: 0.5rem 0 0;
-  font-size: 0.8rem;
-
-  a {
-    color: rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-    transition: color $transition-slow;
-    font-family: $font-family-base;
-
-    &:hover {
-      color: $brand-gold;
-    }
-  }
-}
-
-.social-buttons {
-  @include reset-list;
-  display: flex;
-  gap: 14px;
-}
-
-.social-item {
-  margin: 0;
-}
-
-.social-link {
-  @include social-button-circle;
-}
-
-.quicklinks {
-  @include reset-list;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-
-  @include media-md-down {
+  &__logo-link {
+    display: flex;
     align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: inherit;
   }
 
-  a {
-    color: rgba(255, 255, 255, 0.65);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: $font-weight-normal;
-    transition: color $transition-slow;
-    font-family: $font-family-base;
+  &__logo-img {
+    height: 2rem;
+  }
 
-    &:hover,
-    &:focus {
-      color: $brand-gold;
+  &__logo-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  &__description,
+  &__address {
+    max-width: 70%;
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--color-muted, #6b7280);
+    line-height: 1.6;
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: var(--color-muted, #6b7280);
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      font-size: 1.25rem;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--color-primary, #111827);
+      }
+    }
+  }
+
+  &__sections {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      gap: 5rem;
+    }
+  }
+
+  &__section-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 0.9375rem;
+  }
+
+  &__section-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--color-muted, #6b7280);
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--color-primary, #111827);
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-top: 1px solid var(--color-border, #e5e7eb);
+    margin-top: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-muted, #6b7280);
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__copyright {
+    margin: 0;
+    order: 2;
+
+    @media (min-width: 768px) {
+      order: 1;
+    }
+  }
+
+  &__legal {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    order: 1;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      order: 2;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--color-primary, #111827);
+      }
     }
   }
 }
 
-// WhatsApp Float Button
 .whatsapp-float {
   position: fixed;
   bottom: 24px;
   right: 24px;
   z-index: 1000;
-
-  @include media-md-down {
-    bottom: 16px;
-    right: 16px;
-  }
 }
 
 .whatsapp-btn {
@@ -175,10 +186,10 @@ footer.footer {
   text-decoration: none;
   border-radius: 28px;
   box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
-  font-weight: $font-weight-medium;
+  font-weight: 500;
   font-size: 14px;
-  transition: all $transition-slow;
-  font-family: $font-family-base;
+  transition: all 0.3s ease;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
 
   &:hover,
   &:focus {
@@ -186,13 +197,16 @@ footer.footer {
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+    text-decoration: none;
   }
 
   i {
     font-size: 22px;
   }
 
-  @include media-md-down {
+  @media (max-width: 768px) {
+    bottom: 16px;
+    right: 16px;
     padding: 12px 16px;
     border-radius: 24px;
 

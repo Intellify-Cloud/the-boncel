@@ -15,7 +15,7 @@ $brand-teal-light:  rgba(14, 31, 34, 0.61);
 // ----------------------------------------------------------
 // Semantic Colors (mapped from CSS custom properties)
 // ----------------------------------------------------------
-$color-header:          var(--color-header, #021736);
+$color-header:          var(--color-header, $brand-navy);
 $color-section-bg:      var(--color-section-bg, #F8F9FA);
 $color-text-primary:    var(--color-text-primary, #1A1A1A);
 $color-text-secondary:  var(--color-text-secondary, #555555);
