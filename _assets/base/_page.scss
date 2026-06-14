@@ -7,14 +7,12 @@
 // ----------------------------------------------------------
 .page-section {
   padding: 5vw 8vw;
+  margin-bottom: 0;
+}
 
-  @include section-heading-mobile;
-  margin-bottom: 1rem;
-
-  h3.section-heading {
-    font-size: clamp(1.75rem, 5vw, 2.75rem);
-    margin-bottom: 0.618em;
-  }
+h2.section-heading,
+h3.section-heading {
+  @include section-heading;
 }
 
 // Mobile responsive padding
@@ -34,43 +32,35 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.618em;
 }
 
-h1 { font-size: 2rem; }
-h2 { font-size: 1.75rem; }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.25rem; }
-h5 { font-size: 1.1rem; }
-h6 { font-size: 1rem; }
+h1 { font-size: $font-size-h1; }
+h2 { font-size: $font-size-h2; }
+h3 { font-size: $font-size-h3; }
+h4 { font-size: $font-size-h4; }
+h5 { font-size: $font-size-h5; }
+h6 { font-size: $font-size-h6; }
 
 @include media-md-up {
-  h1 { font-size: 2.25rem; }
-  h2 { font-size: 2rem; }
-  h3 { font-size: 1.65rem; }
-  h4 { font-size: 1.35rem; }
-  h5 { font-size: 1.15rem; }
+  h1 { font-size: $font-size-h1-md; }
+  h2 { font-size: $font-size-h2-md; }
+  h3 { font-size: $font-size-h3-md; }
+  h4 { font-size: $font-size-h4-md; }
+  h5 { font-size: $font-size-h5-md; }
 }
 
 @include media-lg-up {
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2.25rem; }
-  h3 { font-size: 1.75rem; }
-  h4 { font-size: 1.5rem; }
-  h5 { font-size: 1.25rem; }
+  h1 { font-size: $font-size-h1-lg; }
+  h2 { font-size: $font-size-h2-lg; }
+  h3 { font-size: $font-size-h3-lg; }
+  h4 { font-size: $font-size-h4-lg; }
+  h5 { font-size: $font-size-h5-lg; }
 }
 
 @include media-xl-up {
-  h1 { font-size: 2.75rem; }
-  h2 { font-size: 2.5rem; }
-  h3 { font-size: 2rem; }
-  h4 { font-size: 1.65rem; }
-  h5 { font-size: 1.35rem; }
-}
-
-@include media-xl-up {
-  h1 { font-size: 3rem; }
-  h2 { font-size: 2.75rem; }
-  h3 { font-size: 2.25rem; }
-  h4 { font-size: 1.75rem; }
-  h5 { font-size: 1.5rem; }
+  h1 { font-size: $font-size-h1-xl; }
+  h2 { font-size: $font-size-h2-xl; }
+  h3 { font-size: $font-size-h3-xl; }
+  h4 { font-size: $font-size-h4-xl; }
+  h5 { font-size: $font-size-h5-xl; }
 }
 
 // ----------------------------------------------------------
@@ -91,6 +81,7 @@ img::selection {
 body {
   overflow-x: hidden;
   font-family: $font-family-base;
+  font-size: $font-size-body;
   -webkit-tap-highlight-color: $primary;
 }
 

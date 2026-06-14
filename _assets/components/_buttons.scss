@@ -3,12 +3,15 @@
  ============================================================ */
 
 // Design tokens
-$button-border-radius: $radius-sm;
-$button-border-radius-lg: $radius-md;
+$button-border-radius: $radius-lg;
+$button-border-radius-lg: $radius-lg;
 $button-transition: all $transition-base cubic-bezier(0.4, 0, 0.2, 1);
 $button-elevation: 0 2px 4px rgba(0, 0, 0, 0.1);
 $button-elevation-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
 $button-elevation-active: 0 1px 2px rgba(0, 0, 0, 0.1);
+$button-bg: $brand-gold;
+$button-bg-hover: $brand-gold-light;
+$button-text: $white;
 
 // ----------------------------------------------------------
 // Base Button Component
@@ -17,11 +20,11 @@ $button-elevation-active: 0 1px 2px rgba(0, 0, 0, 0.1);
   @include font-heading;
 
   // Typography
-  font-weight: $font-weight-medium;
-  font-size: 0.875rem;
+  font-weight: $font-weight-black;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
   line-height: 1.5;
-  letter-spacing: 0.02em;
-  text-transform: none;
+  letter-spacing: 0;
+  text-transform: none !important;
 
   // Layout & spacing
   display: inline-flex;
@@ -32,6 +35,9 @@ $button-elevation-active: 0 1px 2px rgba(0, 0, 0, 0.1);
   min-height: 2.5rem;
   min-width: 4rem;
   border-radius: $button-border-radius;
+  background: $button-bg;
+  color: $button-text;
+  box-shadow: $shadow-lg;
 
   // Interaction
   border: $border-width-default solid transparent;
@@ -55,60 +61,72 @@ $button-elevation-active: 0 1px 2px rgba(0, 0, 0, 0.1);
     pointer-events: none;
   }
 
-  // Ripple effect container
+  // Shimmer effect
   &::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: currentColor;
-    opacity: 0;
-    transition: opacity $transition-fast;
+    left: -100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
   }
 
-  &:hover::before  { opacity: 0.08; }
-  &:active::before { opacity: 0.12; }
+  &:hover,
+  &:focus {
+    background: $button-bg-hover;
+    color: $button-text;
+    box-shadow: $shadow-xl;
+    text-decoration: none;
+    transform: translateY(-3px);
+  }
+
+  &:hover::before,
+  &:focus::before {
+    left: 100%;
+  }
+
+  &:active {
+    box-shadow: $shadow-lg;
+    transform: translateY(-1px);
+  }
 }
 
 // ----------------------------------------------------------
 // Size Variants
 // ----------------------------------------------------------
 .btn--small {
-  font-size: 0.8125rem;
   padding: 0.5rem 0.75rem;
   min-height: 2rem;
 }
 
 .btn--large {
-  font-size: 0.9375rem;
   padding: 0.75rem 1.5rem;
   min-height: 3rem;
   border-radius: $button-border-radius-lg;
 }
 
 .btn--xl {
-  font-size: 1.0625rem;
   padding: 1rem 2rem;
   min-height: 3.5rem;
   border-radius: $button-border-radius-lg;
-  font-weight: $font-weight-black;
 }
 
 // ----------------------------------------------------------
 // Colour Variant Base
 // ----------------------------------------------------------
 @mixin btn-variant($bg, $text-color: $brand-navy, $elevation: $button-elevation) {
-  background-color: $bg;
+  background: $bg;
   color: $text-color;
   box-shadow: $elevation;
 
   &:hover {
-    background-color: darken($bg, 8%);
+    background: darken($bg, 8%);
     box-shadow: $button-elevation-hover;
     transform: translateY(-1px);
   }
 
   &:active {
-    background-color: darken($bg, 12%);
+    background: darken($bg, 12%);
     box-shadow: $button-elevation-active;
     transform: translateY(0);
   }
@@ -122,7 +140,11 @@ $button-elevation-active: 0 1px 2px rgba(0, 0, 0, 0.1);
 // Style Variants
 // ----------------------------------------------------------
 .btn--primary {
-  @include btn-variant($primary);
+  @include btn-variant($button-bg, $button-text, $shadow-lg);
+}
+
+.btn-primary {
+  @extend .btn--primary;
 }
 
 .btn--secondary {
@@ -141,6 +163,19 @@ $button-elevation-active: 0 1px 2px rgba(0, 0, 0, 0.1);
 
   &:focus-visible {
     box-shadow: 0 0 0 3px rgba($primary, 0.15);
+  }
+}
+
+.btn-outline-primary {
+  background: transparent;
+  color: $button-bg;
+  border-color: rgba($button-bg, 0.65);
+
+  &:hover,
+  &:focus {
+    background: $button-bg;
+    border-color: $button-bg;
+    color: $button-text;
   }
 }
 

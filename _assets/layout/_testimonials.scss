@@ -4,7 +4,6 @@
 /* testimonials.scss – Text-only cards */
 #testimonials {
   @include section-padding;
-  @include container-wide;
   text-align: center;
   color: $color-text-primary;
   min-height: auto;
@@ -12,6 +11,10 @@
   flex-direction: column;
   justify-content: center;
   background-color: $color-section-bg;
+
+  > .container {
+    max-width: $container-max-width-wide;
+  }
 
   h2,
   .section-heading {
@@ -24,6 +27,7 @@
 
   .testimonials-container {
     @include grid-mobile-to-single(600px);
+    max-width: $container-max-width-wide;
     gap: $spacer-lg;
     padding-top: 0;
   }

@@ -3,10 +3,13 @@
 
 #services {
   @include section-padding;
-  @include container-wide;
   text-align: center;
   color: $color-text-primary;
   background-color: $color-section-bg;
+
+  > .container {
+    max-width: $container-max-width-wide;
+  }
 
   h2,
   .section-heading {
@@ -19,6 +22,7 @@
 
   .services-container {
     @include grid-responsive-cards(3);
+    max-width: $container-max-width-wide;
     padding-top: 0;
   }
 

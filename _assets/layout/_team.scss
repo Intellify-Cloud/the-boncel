@@ -3,7 +3,6 @@
 
 .team-section {
   @include section-padding;
-  @include container-narrow;
   text-align: center;
   background-color: $color-section-bg;
   min-height: 100vh;
@@ -11,6 +10,10 @@
   flex-direction: column;
   justify-content: center;
   color: $color-text-primary;
+
+  > .container {
+    max-width: $container-max-width-wide;
+  }
 
   .section-heading {
     @include section-heading;
@@ -26,7 +29,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: $spacer-lg;
-  max-width: 1200px;
+  max-width: $container-max-width-wide;
   margin: 0 auto;
   padding: 0 $spacer-md;
 

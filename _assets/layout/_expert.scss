@@ -39,9 +39,11 @@
 
   &__button {
     padding: 12px 24px;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
     font-weight: $font-weight-black;
-    border-radius: $radius-sm;
+    letter-spacing: 0;
+    text-transform: none;
+    border-radius: $radius-lg;
     transition: all $transition-slow;
     text-decoration: none;
     display: inline-block;

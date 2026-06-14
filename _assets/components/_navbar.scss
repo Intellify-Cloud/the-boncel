@@ -11,11 +11,11 @@
     padding: 8px 12px;
     color: white;
     border: none;
-    background-color: $primary;
+    background-color: $brand-gold;
     @include font-heading;
 
     &:hover {
-      background-color: darken($primary, 10%);
+      background-color: $brand-gold-light;
     }
   }
 

@@ -1,0 +1,47 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+#about {
+  background-color: $color-section-bg;
+  color: $color-text-primary;
+
+  > .container {
+    max-width: $container-max-width-wide;
+  }
+
+  .section-heading {
+    @include section-heading;
+  }
+
+  .about-body {
+    max-width: 900px;
+    margin: 0 auto;
+    color: $color-text-secondary;
+    font-family: $font-family-body;
+    font-size: 1.0625rem;
+    font-weight: $font-weight-normal;
+    line-height: 1.7;
+
+    p {
+      margin: 0 0 $spacer-md;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .about-tagline {
+    margin-top: $spacer-lg;
+    color: $brand-gold-light;
+    font-family: $font-family-heading;
+    font-size: 1rem;
+    font-weight: $font-weight-black;
+    line-height: 1.5;
+    letter-spacing: 0;
+
+    p {
+      margin: 0;
+    }
+  }
+}

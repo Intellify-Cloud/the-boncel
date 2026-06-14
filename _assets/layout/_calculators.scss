@@ -23,6 +23,14 @@
     justify-content: center;
   }
 
+  .main-title {
+    @include section-heading;
+  }
+
+  .subtitle {
+    @include section-subtitle;
+  }
+
   &-grid,
   &__grid {
     display: grid;
@@ -134,7 +142,7 @@
   .btn--calculator {
     display: inline-block;
     padding: 16px 32px;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
     font-weight: $font-weight-black;
     border-radius: $radius-lg;
     text-decoration: none;
@@ -142,8 +150,8 @@
     color: white;
     border: none;
     transition: all $transition-slow;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    text-transform: none;
+    letter-spacing: 0;
     position: relative;
     overflow: hidden;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
@@ -175,7 +183,6 @@
 
     &.btn--xl {
       padding: 20px 40px;
-      font-size: 1.1rem;
     }
   }
 }
