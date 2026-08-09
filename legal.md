@@ -1,11 +1,9 @@
 ---
 layout: page
 title: Privacy Policy
+description: "Review The Bond Cellar privacy policy for website visitors, including analytics, device information, cookies, and contact details."
 background: grey
 ---
-<div class="col-lg-12 text-center">
-	<h2 class="section-heading text-uppercase">Privacy Policy</h2>
-</div>
 
 This Privacy Policy describes how your personal information is collected, used, and shared when you visit {{ site.title }} (the “Site”).
 

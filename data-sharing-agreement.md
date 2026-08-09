@@ -1,12 +1,10 @@
 ---
 layout: page
 title: Data Sharing
+heading: Our Data Sharing Agreement
+description: "Read The Bond Cellar data sharing agreement for business partners and third parties who share personal information for home loan and related services."
 background: grey
 ---
-<div class="col-lg-12 text-center">
-	<h2 class="section-heading text-uppercase">Our Data Sharing Agreement</h2>
-</div>
-
 
 #### Definitions
 

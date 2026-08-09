@@ -1,12 +1,10 @@
 ---
 layout: page
-title: Privacy Policy
+title: Privacy Statement
+heading: Our Privacy Statement
+description: "Read The Bond Cellar privacy statement explaining how personal information is collected, processed, shared, protected, and retained."
 background: grey
 ---
-<div class="col-lg-12 text-center">
-	<h2 class="section-heading text-uppercase">Our Privacy Statement</h2>
-</div>
-
 
 
 #### Definitions
