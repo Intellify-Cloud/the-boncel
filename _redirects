@@ -1,0 +1,7 @@
+# Redirect .html pages to pretty permalinks
+/deposit-savings-calculator.html  /deposit-savings-calculator/  301
+/*.html  /:splat/  301
+
+# Force canonical host (www -> non-www)
+https://www.thebondcellar.co.za/*  https://thebondcellar.co.za/:splat  301
+http://thebondcellar.co.za/*  https://thebondcellar.co.za/:splat  301

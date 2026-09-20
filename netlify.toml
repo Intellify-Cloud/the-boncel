@@ -1,0 +1,21 @@
+[build]
+  publish = "_site"
+  command = "jekyll build"
+
+[[redirects]]
+  from = "https://www.thebondcellar.co.za/*"
+  to = "https://thebondcellar.co.za/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://thebondcellar.co.za/*"
+  to = "https://thebondcellar.co.za/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*.html"
+  to = "/:splat/"
+  status = 301
+  force = true

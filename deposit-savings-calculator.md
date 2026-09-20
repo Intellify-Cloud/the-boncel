@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Deposit Savings Calculator
+permalink: /deposit-savings-calculator/
 description: "Calculate how much you need to save for your home loan deposit. Plan your savings timeline for South African property purchases."
 background: white
 ---

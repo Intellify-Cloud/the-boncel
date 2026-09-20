@@ -21,8 +21,8 @@
   "sameAs": {{ site.same_as | jsonify }},
   "provider": {
     "@type": "Organization",
-    "name": "EVO Home Loans",
-    "url": "https://evohomeloans.co.za"
+    "name": {{ site.company | jsonify }},
+    "url": {{ site.url | jsonify }}
   }
 }
 </script>
